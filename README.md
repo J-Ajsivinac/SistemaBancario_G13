@@ -14,9 +14,6 @@
 🙍‍♂️ Brayan Estiben Mica Perez 🆔 201907343
 </div>
 <div>
-🙍‍♂️ Carlos Daniel Catalan Catalan 🆔 201520557
-</div>
-<div>
 🙍‍♂️ Marcos Geovani Josías Pérez Secay 🆔 201903878
 </div>
 <br>
