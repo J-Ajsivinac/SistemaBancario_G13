@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E940CAA1-C2F4-7B28-4EB8-EEEBBCB2B23A" name="ESTADO_FINANCIERO">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>20C7BBFF-CE61-3108-6678-50586B6BA864</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_estado" id="0F32B26C-9025-4E42-76E2-630B4909CE14">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>3C930B3E-27CE-9F76-6C15-A7D8036FB26F</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_registro" id="FDC032C8-582B-3E28-CD40-383113E13969">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>EF2F5913-7664-DDAD-4F57-BCF9E1CE56D7</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="total_activos" id="4FE43678-8BD8-2515-BEDC-79E4DA485948">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>5DDADB19-FFF2-7897-116F-BDE6D54F1AAC</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="total_pasivos" id="86250A04-6BA6-9E6B-AA17-A077353D8EAA">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>8981D7F0-1EC5-01A8-6DED-67B88679D6C8</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="capital_disponible" id="236533B7-227E-32FD-B8E8-4194A749ED8D">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>180FC3E1-9DEA-ADD6-3C4D-C3FA1B3228C8</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="43C39CC7-5AC3-5D02-641B-A8AF5EBC3F89" name="ESTADO_FINANCIERO_PK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>66629170-5FBC-A3E2-545B-00AF80238109</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0F32B26C-9025-4E42-76E2-630B4909CE14"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7227A4E3-1FDF-8159-0FF1-A959A99F764E" name="TRANSACCION_INTERBANCARIA">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:43:39 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_transaccion" id="43CB0880-4EDB-9EA5-B0C5-E094185BE470">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:43:48 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="monto" id="C21A5E51-9E93-9284-3007-CC16B289CC36">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:43:57 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha" id="3DF99AB5-0568-D695-3BB0-83026A6884C8">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:44:24 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_agencia" id="16AA6B49-7F44-AC92-D55D-CC262E7466D2">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:44:46 UTC</createdTime>
+<generatorID>52BE6745-3E4E-F0F6-7CAE-FF7A33301757</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<referedAttribute>22F8DE3C-8E3F-DD17-CC0C-A168296F8ACE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_agencia1" id="312DD74F-EE11-4F45-8526-73B7B04D1EB9">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:45:10 UTC</createdTime>
+<generatorID>41B6FEF7-FC2E-064B-F5B3-0E3C866688AE</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<referedAttribute>22F8DE3C-8E3F-DD17-CC0C-A168296F8ACE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E710F5E7-013F-25D4-40FE-D85132C74A6E" name="TRANSACCION_INTERBANCARIA PK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:44:04 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>43CB0880-4EDB-9EA5-B0C5-E094185BE470</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DE0D6A47-F7EB-2F50-D8C1-A9F84ECD7EF7" name="TIPO_AGENCIA_SUCURSAL">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>B183EF54-F7D5-7AF2-1686-674E2373ABE1</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_tipo_agencia_sucursal" id="02D82755-C674-6F2A-5194-B4597280D286">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>FE9DD34B-8039-44D7-4619-CBC7F643C57C</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo" id="75C37B9A-19C2-7805-0C9B-42994EB58E3A">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>3A0F2E5C-9716-50D6-6A54-CFB67920C316</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9</dataTypeSize>
+<ownDataTypeParameters>9,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="19D9BE2F-0718-3FEF-6B7D-1430305E0B79" name="Tipo_Agencia_Sucursal_PK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>4BF20DE2-552F-A3CD-DB43-5F215989D6CB</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="02D82755-C674-6F2A-5194-B4597280D286"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

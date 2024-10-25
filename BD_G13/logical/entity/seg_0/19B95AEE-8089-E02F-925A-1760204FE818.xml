@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="19B95AEE-8089-E02F-925A-1760204FE818" name="USUARIO">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:18:10 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_usuario" id="8A5B30C0-D438-B4E2-6C49-E216C95348C5">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:18:19 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="7FBE9646-2280-2ED1-CD21-53113E280110">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:18:40 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="password" id="654B0AE5-5C92-C88D-436F-6A45A2224214">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:18:58 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_acceso" id="1CFD56FE-0AF4-8C14-09ED-7B22D4397A1A">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:22:15 UTC</createdTime>
+<generatorID>9298E9AD-A916-54E9-A8B7-C796B5FB1101</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<referedAttribute>3D94F63F-153B-FDB7-10B1-BD012C860A64</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B33400E6-897E-9260-46B4-7DA17C51D58F" name="USUARIO PK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:18:28 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8A5B30C0-D438-B4E2-6C49-E216C95348C5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

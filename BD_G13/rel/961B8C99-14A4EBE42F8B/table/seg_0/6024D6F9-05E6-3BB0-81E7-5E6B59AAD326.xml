@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6024D6F9-05E6-3BB0-81E7-5E6B59AAD326" name="USUARIO">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>19B95AEE-8089-E02F-925A-1760204FE818</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_usuario" id="3FEFE9F4-569F-3668-2024-ADEAE2C971E4">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>8A5B30C0-D438-B4E2-6C49-E216C95348C5</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="9D0AAD28-FD58-2BAB-7E32-70F7EE914D7A">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>7FBE9646-2280-2ED1-CD21-53113E280110</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="password" id="3444C512-3B6A-F43B-75BB-EABF5E8667B6">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>654B0AE5-5C92-C88D-436F-6A45A2224214</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TIPO_ACCESO_id_acceso" id="916A2B95-E5C7-1016-FD33-4BF8C4B35F29">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>1CFD56FE-0AF4-8C14-09ED-7B22D4397A1A</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D5111FEF-EF02-6FCD-3A4C-5C06BD21D633" referredColumn="517E08BA-D12D-69A5-D965-051AD4305D9E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8F662BA4-96C0-DD5D-BAF9-8EA717313761" name="USUARIO_PK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>B33400E6-897E-9260-46B4-7DA17C51D58F</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3FEFE9F4-569F-3668-2024-ADEAE2C971E4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="60F6A7F2-A8AB-F082-AD21-ECDE5CF2A61A" name="USUARIO__IDX">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>9298E9AD-A916-54E9-A8B7-C796B5FB1101</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="916A2B95-E5C7-1016-FD33-4BF8C4B35F29"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AB518EA6-B4A0-CB3D-D487-AED3F85B9EF1" name="USUARIO_TIPO_ACCESO_FK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>9298E9AD-A916-54E9-A8B7-C796B5FB1101</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="916A2B95-E5C7-1016-FD33-4BF8C4B35F29"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

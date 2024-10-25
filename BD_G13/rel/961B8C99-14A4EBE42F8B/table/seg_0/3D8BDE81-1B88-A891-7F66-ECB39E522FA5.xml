@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3D8BDE81-1B88-A891-7F66-ECB39E522FA5" name="AUDITORIA_TRANSACCION">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>0884BD94-4787-2898-1953-2707D5A073EA</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_auditoria" id="A5C6D1F4-E791-7C8C-ECE9-62E9663DFF98">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>628C1397-22FB-3920-C8C8-E322050C980B</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="comentario" id="D1BF6230-F650-01AC-C00B-2C60089ADB5E">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>5AF18719-74BA-67B0-F268-86363B6C8516</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TRANSACCION_id_transaccion" id="E6467BF5-BDA0-6A51-83B7-7895B2478E45">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>A61A738B-C120-E2C9-EAAF-768EF05A7260</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F57C2705-762C-F2E8-AAA6-ADB2904E8537" referredColumn="001803F8-798C-8CFC-9A94-5B037FBC0E2A"/>
+</associations>
+</Column>
+<Column name="EMPLEADO_id_empleado" id="D84FA574-84BB-8242-AA9E-B37D1FF48B6B">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>61420EC1-4D45-F484-8002-BB1E83B972C4</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4F171E73-D51E-3C1D-F3B4-3E168A8B5337" referredColumn="6E9E7618-EC14-2E63-0A0F-D7431F98E83B"/>
+</associations>
+</Column>
+<Column name="fecha" id="98C819FA-3A07-EC3F-7348-CDB9D7239C24">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>37AE5FE3-D5E5-DD5C-329F-DA3C2234C9CD</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="17CEBA29-A66C-ECC5-C547-3B2EA8A22461" name="Auditoria_Transaccion_PK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>2B85153E-8178-F7C1-9CB0-90A1D8EBD818</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A5C6D1F4-E791-7C8C-ECE9-62E9663DFF98"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="37DBE6B4-41A1-6F87-9E86-B94591F87935" name="AUDITORIA_TRANSACCION_TRANSACCION_FK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>76779FFB-4F06-1150-9E9D-5585BD3D0D7C</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E6467BF5-BDA0-6A51-83B7-7895B2478E45"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="93E9A682-40EF-823D-2A0C-37EB90FB378E" name="AUDITORIA_TRANSACCION_EMPLEADO_FK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>6490592E-87A9-2CAC-3923-B541891F1541</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D84FA574-84BB-8242-AA9E-B37D1FF48B6B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

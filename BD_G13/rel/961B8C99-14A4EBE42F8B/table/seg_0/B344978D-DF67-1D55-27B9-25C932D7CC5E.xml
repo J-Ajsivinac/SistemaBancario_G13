@@ -1,0 +1,170 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B344978D-DF67-1D55-27B9-25C932D7CC5E" name="TARJETA_CREDITO">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>0120BD1F-219E-2E95-38BD-F74BD4C68132</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_tarjeta" id="C536AAB4-6A01-899B-6CBB-D3F5AE530366">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>CB98190C-6466-479F-B737-4055E0A72F44</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="limite_credito" id="217160BF-6012-9CA1-E87D-325B5DA8CED4">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>E95EB33D-B678-B0DC-41F0-132DEF3F3891</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="saldo" id="2131BE2E-FA1E-2565-3679-5313BA43A681">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>2F90A13B-CF90-7332-1929-A174985FC35C</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_emision" id="1754BFD3-67EA-54E0-30D0-251930DE7928">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>5B8E0271-B912-F7CF-1D97-A40B7E09F5A1</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_expiracion" id="B6CAE9BE-D7CF-D27C-0F07-2ECDCAA30CFF">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>2AA75290-C92C-922E-17A2-EC7664DBF388</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_corte" id="9F573305-1C59-8004-1C88-4E55AE5DD7AD">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>E82D054B-201A-9BC5-5EAF-2ACA61744A91</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dia_ciclo" id="F2C0B519-B7E9-BE5B-616E-E5DC38177DFB">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>C4F44DC9-53AF-38AC-9821-81C44322EAA1</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLIENTE_id_cliente" id="F0C8FB0B-BF56-4C6C-9AFF-810515E96A40">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>65A02869-4B10-0AEB-6BE6-60512D578796</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9F875F0C-1182-DD2B-3A7A-DFEFCE38FC40" referredColumn="0EAB5DCA-01B1-1BB1-1F1A-D09F9425EB49"/>
+</associations>
+</Column>
+<Column name="ESTADO_TARJETA_id_estado" id="05E10511-560B-3FBD-B31B-6508A9DD6685">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>5DD01A0F-E79D-E85B-A0C4-362C8E25291E</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F251E12B-AB68-763F-384C-D3E115B7AA5A" referredColumn="6AD836CB-1570-B3B5-A813-AE02A2A0E5E7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B8C88D7D-C28D-F9E6-D842-D512D1DF6D54" name="Tajetas_Credito_PK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>87CBD074-3B2F-E45C-2DD1-A54EE02CEBFB</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C536AAB4-6A01-899B-6CBB-D3F5AE530366"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="326A4470-1021-DE9F-07C6-752B6BF4B710" name="Tajetas_Credito__IDX">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>318BAC92-C6BC-FFB9-989B-497E953304D6</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="05E10511-560B-3FBD-B31B-6508A9DD6685"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="93EE6278-124D-CEE1-C800-53D3562E7734" name="TARJETA_CREDITO_ESTADO_TARJETA_FK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>318BAC92-C6BC-FFB9-989B-497E953304D6</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="05E10511-560B-3FBD-B31B-6508A9DD6685"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C020024F-F63B-B21F-C17C-720CD3976EF1" name="TARJETA_CREDITO_CLIENTE_FK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>7FB989FA-5481-909C-471E-381EC538AAF2</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F0C8FB0B-BF56-4C6C-9AFF-810515E96A40"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

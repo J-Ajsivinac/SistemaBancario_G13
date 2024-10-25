@@ -1,0 +1,208 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1C31C1D6-2F90-925F-D845-EB9071FCC562" name="AGENCIA">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>2AF628AB-D724-A974-F6B7-DB6D7901BBF8</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_agencia" id="142018C2-9494-CC0A-497C-8753BC342F69">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>22F8DE3C-8E3F-DD17-CC0C-A168296F8ACE</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="D7FB3808-10FF-6ADE-5073-6B3E1D2112DF">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>81034E4E-45CB-5902-68F2-1F2DC1B0115E</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="telefono" id="7B99D7E9-406E-51CB-4B63-FC82EFAE0F21">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>F21D19C0-9D3A-4B5A-4533-1F849982C37E</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>14</dataTypeSize>
+<ownDataTypeParameters>14,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dirección" id="0D0BFC35-167E-C1D0-A9DA-830CCA370DD6">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>298B5AD1-C112-9071-1EC4-F1D948F3B827</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEPARTAMENTO_id_departamento" id="BBC48B08-FD92-8585-D8D1-85DA89D33325">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>3B06CE90-57D4-4286-EE93-17CCD64BE1B0</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3B821C2E-F9A8-85BB-DACA-8F9F698CCE0F" referredColumn="254DE14C-32D1-9329-7177-D5269DE9306E"/>
+</associations>
+</Column>
+<Column name="TIPO_AGENCIA_SUCURSAL_id_tipo_agencia_sucursal" id="D3D45B47-EBF6-DE77-8D67-A05886440A37">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>092D7D71-7BC9-DA3F-B208-782A34395972</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="59D3D135-10C7-9B26-54FA-3BDE09DA0D62" referredColumn="02D82755-C674-6F2A-5194-B4597280D286"/>
+</associations>
+</Column>
+<Column name="ESTADO_FINANCIERO_id_estado" id="7F524556-F85E-0351-EDEE-CE56CAA3F1C2">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>AAFD04F3-3F74-7FA7-A43F-051596FAE921</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DDF7FF5B-8054-11CC-AD78-076632F7632A" referredColumn="0F32B26C-9025-4E42-76E2-630B4909CE14"/>
+</associations>
+</Column>
+<Column name="BOVEDA_id_boveda" id="B1402B7C-2C81-5101-228B-39463E9A8EAA">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>300F99AD-7F87-8CCF-2AD6-82A113FB3FF8</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0DFA0F86-2C1C-4B09-6D25-09676E59DEAF" referredColumn="1C48CA15-0D5F-287D-E4EF-A5BFD764B05C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="47C210D6-D6BD-AEA4-ED4D-C1C46F87973B" name="Agencias_PK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>2D3DFED3-C24D-DD33-02DF-2448A81C4F3E</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="142018C2-9494-CC0A-497C-8753BC342F69"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="428B7318-0E02-F7E8-D2B6-20C6C8C8DB13" name="Agencias__IDX">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>89D8EA4A-C36A-8FD9-8A32-13BD7682307C</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="D3D45B47-EBF6-DE77-8D67-A05886440A37"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A22C4520-7067-ABB1-C4AA-44066C27BDFB" name="AGENCIA__IDX">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>CBBA10CF-59EC-C9A5-E665-7E57822CC81D</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="7F524556-F85E-0351-EDEE-CE56CAA3F1C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="21C5609A-FD49-3B96-3F3D-514B0434BA27" name="AGENCIA__IDXv1">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>FFF0B016-5985-179B-E066-DDA5125393FD</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="B1402B7C-2C81-5101-228B-39463E9A8EAA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ECF29842-8337-C27F-E254-3B3D2A4AD5FF" name="AGENCIA_TIPO_AGENCIA_SUCURSAL_FK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>89D8EA4A-C36A-8FD9-8A32-13BD7682307C</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D3D45B47-EBF6-DE77-8D67-A05886440A37"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F9566CEC-7D36-B439-644E-C3699B9C258D" name="AGENCIA_DEPARTAMENTO_FK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>A91FC9A7-0E62-57EC-5DCD-BC2DF93F9827</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BBC48B08-FD92-8585-D8D1-85DA89D33325"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DA3976BF-F058-4606-4523-6E7787AE55B9" name="AGENCIA_ESTADO_FINANCIERO_FK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>CBBA10CF-59EC-C9A5-E665-7E57822CC81D</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7F524556-F85E-0351-EDEE-CE56CAA3F1C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8A5D23F6-2D6C-48FC-8A87-4B00AED1C0D7" name="AGENCIA_BOVEDA_FK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>FFF0B016-5985-179B-E066-DDA5125393FD</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B1402B7C-2C81-5101-228B-39463E9A8EAA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

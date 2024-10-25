@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0FC53235-DC78-F0C0-06F5-0473047F3374" name="PAGO_TC">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-16 02:26:36 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_pago" id="DE82A2E8-FD98-1DC5-2575-4CBAA1020966">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-16 02:26:55 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="monto_pago" id="A2DCD58F-3E3F-D763-AA5F-E7DE43DE42CE">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-16 02:27:01 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_pago" id="336C2434-6139-03CB-C4FB-D38F0F37B5C3">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-16 02:27:14 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_tarjeta" id="FE6B0562-DA30-BE90-AFEE-AFD700327EF3">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-16 02:27:36 UTC</createdTime>
+<generatorID>80265F6E-4A55-2B29-6E2B-D613CEBFC23E</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<referedAttribute>CB98190C-6466-479F-B737-4055E0A72F44</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0CD9F11A-7C3D-3EB5-925D-727EBC767FB9" name="Pagos_TC PK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-16 02:26:59 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>DE82A2E8-FD98-1DC5-2575-4CBAA1020966</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,140 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E9420A4A-535E-6047-CF43-B8D58C718F13" name="PRESTAMO">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 01:24:37 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_prestamo" id="97AB4BBD-7A64-AB76-2F22-2BE8ABEFEA49">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 04:21:42 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="monto" id="8A05B553-5D10-9FAA-6BBC-EFD8E8EA9662">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 04:21:55 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tasa_interes" id="CCA570CD-ED90-1390-8F69-13A27C48B29E">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 04:22:02 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,3,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_desembolso" id="DAFC54EA-904A-4403-B525-5A0514BC8E61">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 04:22:09 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_vencimiento" id="A1FD43F9-A20F-9A77-7D17-1E3A6E7B3B65">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 04:22:16 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="saldo_pendiente" id="7A090B07-936B-3069-13DF-CE9E99C3850B">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 04:22:25 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_estado_prestamo" id="92225A60-8A44-1035-6096-9751A1894FFC">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 04:24:05 UTC</createdTime>
+<generatorID>374313A0-4B23-E9C7-A5A7-452C16F4B943</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<referedAttribute>3E040F49-EF0A-FA90-99AB-60A3F4D72B95</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_cliente" id="2F95D7E8-C0F3-4DCA-B766-D99E21033610">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 04:25:16 UTC</createdTime>
+<generatorID>A8367FAD-B98E-7C57-D9F5-046A82593DD4</generatorID>
+<ownerDesignName>BD_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<referedAttribute>172AC8AC-528C-F2D5-A930-F1BDA46B1A2A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E0FB4019-6774-DFDE-ECFF-015E7F12A2A9" name="Prestamos PK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 04:21:53 UTC</createdTime>
+<ownerDesignName>BD_G13</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>97AB4BBD-7A64-AB76-2F22-2BE8ABEFEA49</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
