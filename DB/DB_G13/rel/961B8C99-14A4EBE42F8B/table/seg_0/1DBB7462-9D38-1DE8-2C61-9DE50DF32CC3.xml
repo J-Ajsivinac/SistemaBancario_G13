@@ -1,0 +1,161 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1DBB7462-9D38-1DE8-2C61-9DE50DF32CC3" name="EMPLEADO">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>5E9CAF8B-D64B-6BF7-B5B0-9016B2A8C720</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_empleado" id="6E9E7618-EC14-2E63-0A0F-D7431F98E83B">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>CF908022-DB97-0784-4996-5AA49BF71EF9</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="5352F4F5-DE5A-A350-832E-9622DBA4374B">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>B487FCC3-EFE6-6C13-55D6-B2580BBF1EF5</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="apellido" id="AFFB6C7D-4ED2-9673-5F22-89CD7336C02D">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>1952552E-3552-FAE6-8382-117DA7B7B8F9</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="telefono" id="DC96F333-56BC-E653-3728-57D349831C49">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>6AA51D16-BACE-E20F-D2EC-70106FC190B2</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AGENCIA_id_agencia" id="553A78E8-B013-9055-9748-0F1FF3F2BAF8">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>08980F0D-22BA-16AA-1992-79A3B6971C28</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FB0CEAAA-A01B-D2A3-B15B-F27EB094F99B" referredColumn="142018C2-9494-CC0A-497C-8753BC342F69"/>
+</associations>
+</Column>
+<Column name="TIPO_ROL_id_rol" id="246C8CD6-581C-E65E-2913-D5C039B591B8">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>8D035A1E-70FE-F7BF-69AE-A6A1A40D0EEC</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="68092A66-788F-A5FE-10AE-AF6A757B8D67" referredColumn="30CAA7F5-6F42-F144-3000-629369809E65"/>
+</associations>
+</Column>
+<Column name="DEPARTAMENTO_id_departamento" id="9F40006C-149E-DFCC-6F29-8B3CF06D5EB0">
+<createdBy>ajsivinac</createdBy>
+<createdTime>2024-10-04 02:01:23 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C918D682-418B-39CA-CBB1-AAD5268CA9A3" referredColumn="254DE14C-32D1-9329-7177-D5269DE9306E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6562332A-BF80-4915-BAEF-D1098C2FD2DA" name="Empleados_PK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>87471E87-5C05-333C-E7DE-AD58859CF37A</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6E9E7618-EC14-2E63-0A0F-D7431F98E83B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B53F5D66-E74F-7BB5-45F2-189F03A1333D" name="Empleados__IDX">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>0D27F0B5-65F0-B80F-6319-F2EC5623467E</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="246C8CD6-581C-E65E-2913-D5C039B591B8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D58957A1-C6A6-3197-3ABA-FFE334212A4D" name="EMPLEADO_TIPO_ROL_FK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>0D27F0B5-65F0-B80F-6319-F2EC5623467E</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="246C8CD6-581C-E65E-2913-D5C039B591B8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2E051736-A1F7-2533-1E23-DB2306FB6D89" name="EMPLEADO_AGENCIA_FK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>1668C817-93D3-548B-2855-51D5B92405E8</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="553A78E8-B013-9055-9748-0F1FF3F2BAF8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A9A5BB3E-378D-E1CE-64DF-C03DFBEABB2F" name="EMPLEADO_DEPARTAMENTO_FK">
+<createdBy>ajsivinac</createdBy>
+<createdTime>2024-10-04 02:01:23 UTC</createdTime>
+<generatorID>AC78FD7F-67CD-606F-0563-9B301806878A</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9F40006C-149E-DFCC-6F29-8B3CF06D5EB0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

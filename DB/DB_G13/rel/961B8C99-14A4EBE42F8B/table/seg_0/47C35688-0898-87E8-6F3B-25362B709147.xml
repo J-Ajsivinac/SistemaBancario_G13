@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="47C35688-0898-87E8-6F3B-25362B709147" name="TRANSACCION_INTERBANCARIA">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>7227A4E3-1FDF-8159-0FF1-A959A99F764E</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_transaccion" id="92343F82-8044-EBCF-FC5D-45DAFFECA463">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>43CB0880-4EDB-9EA5-B0C5-E094185BE470</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="monto" id="56055F6C-3338-18A6-5053-B25003DE196E">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>C21A5E51-9E93-9284-3007-CC16B289CC36</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha" id="C4EB7B89-91E2-6EA2-E06F-0B12ECD695DA">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>3DF99AB5-0568-D695-3BB0-83026A6884C8</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AGENCIA_id_agencia" id="97D190D2-25CC-4066-1F30-486B719E4903">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>16AA6B49-7F44-AC92-D55D-CC262E7466D2</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8C709036-E838-C48A-EAE6-5538A27F6B92" referredColumn="142018C2-9494-CC0A-497C-8753BC342F69"/>
+</associations>
+</Column>
+<Column name="AGENCIA_id_agencia2" id="88947EED-250F-3E70-F9D1-D399AF00A96C">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>312DD74F-EE11-4F45-8526-73B7B04D1EB9</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6B14B45C-FB2E-5EFD-23BB-49D7C8537F71" referredColumn="142018C2-9494-CC0A-497C-8753BC342F69"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F05A3062-80F3-B6FE-7910-1B1A9574529A" name="TRANSACCION_INTERBANCARIA_PK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>E710F5E7-013F-25D4-40FE-D85132C74A6E</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="92343F82-8044-EBCF-FC5D-45DAFFECA463"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="279A8270-840D-094F-43B4-61E3F3757203" name="TRANSACCION_INTERBANCARIA_AGENCIA_FK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>52BE6745-3E4E-F0F6-7CAE-FF7A33301757</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="97D190D2-25CC-4066-1F30-486B719E4903"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3010D10F-0366-F022-DE00-E01C34DF3860" name="TRANSACCION_INTERBANCARIA_AGENCIA_FKv2">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-10-24 23:57:23 UTC</createdTime>
+<generatorID>41B6FEF7-FC2E-064B-F5B3-0E3C866688AE</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="88947EED-250F-3E70-F9D1-D399AF00A96C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

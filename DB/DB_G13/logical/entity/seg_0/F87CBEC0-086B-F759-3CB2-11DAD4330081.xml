@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F87CBEC0-086B-F759-3CB2-11DAD4330081" name="TIPO_ROL">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 01:24:54 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_rol" id="C90902A3-FA2A-8017-EEDE-526BCCC1A6C8">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 04:29:11 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rol" id="3CA77527-B45B-3E2D-6EED-59E95ABEDB23">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 04:29:17 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8989E666-8C52-7B18-0D43-D2EA090B097D" name="Roles PK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 04:29:16 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C90902A3-FA2A-8017-EEDE-526BCCC1A6C8</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

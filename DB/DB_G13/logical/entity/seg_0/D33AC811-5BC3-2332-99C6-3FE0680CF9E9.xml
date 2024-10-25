@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D33AC811-5BC3-2332-99C6-3FE0680CF9E9" name="CLIENTE">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 01:23:10 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_cliente" id="172AC8AC-528C-F2D5-A930-F1BDA46B1A2A">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 03:45:31 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="3C010EB6-2FD4-96BB-0D71-25C0CA2E1D04">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 03:46:08 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="apellido" id="5C2AC036-4FC4-1503-65B7-C9F185FEB7AF">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 03:46:42 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="telefono" id="F610ACCC-670F-9939-8729-438F028F2D87">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 03:46:50 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_registro" id="6CAC898C-31BE-D4DA-AC7D-8BF6BBA01560">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 01:20:24 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="380A27E5-4939-17BF-033B-B52358B13BFD" name="Clientes PK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 03:45:38 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>172AC8AC-528C-F2D5-A930-F1BDA46B1A2A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

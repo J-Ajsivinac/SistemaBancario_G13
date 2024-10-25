@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="59D3D135-10C7-9B26-54FA-3BDE09DA0D62" containerWithKeyObject="1C31C1D6-2F90-925F-D845-EB9071FCC562" localFKIndex="ECF29842-8337-C27F-E254-3B3D2A4AD5FF" name="AGENCIA_TIPO_AGENCIA_SUCURSAL_FK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 03:24:46 UTC</createdTime>
+<generatorID>89D8EA4A-C36A-8FD9-8A32-13BD7682307C</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<referredTableLongName>TIPO_AGENCIA_SUCURSAL</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>DE0D6A47-F7EB-2F50-D8C1-A9F84ECD7EF7</referredTableID>
+<keyObject>19D9BE2F-0718-3FEF-6B7D-1430305E0B79</keyObject>
+<referredKeyID>19D9BE2F-0718-3FEF-6B7D-1430305E0B79</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_tipo_agencia_sucursal</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

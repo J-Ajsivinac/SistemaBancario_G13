@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_17" directorySegmentName="seg_0" id="89D8EA4A-C36A-8FD9-8A32-13BD7682307C">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 04:50:25 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<sourcePk>4BF20DE2-552F-A3CD-DB43-5F215989D6CB</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>pertenece</nameOnSource>
+<nameOnTarget>tiene </nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>B183EF54-F7D5-7AF2-1686-674E2373ABE1</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>2AF628AB-D724-A974-F6B7-DB6D7901BBF8</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

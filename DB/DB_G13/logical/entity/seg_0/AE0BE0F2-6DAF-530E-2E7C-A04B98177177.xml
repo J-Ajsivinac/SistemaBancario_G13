@@ -1,0 +1,139 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="AE0BE0F2-6DAF-530E-2E7C-A04B98177177" name="TRANSACCION">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 01:24:59 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_transaccion" id="4C8086BC-9610-3795-EAA7-A42196846565">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 04:31:29 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cuenta_destino" id="177A8729-307A-33EA-1000-7EB475F6FCCB">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 04:31:48 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="monto" id="217DB74C-DB41-CFC1-CFE8-AD55544A5C8E">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 04:31:56 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha" id="14166284-F3F7-29E4-09F7-F6762155153E">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 04:32:05 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="descripcion" id="FFC17BAA-01E0-7C1D-0658-86189CA1A9A0">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 04:32:11 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_tipo_transaccion" id="71A5C923-2F74-9135-5FA6-D38B3851D17B">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 04:33:09 UTC</createdTime>
+<generatorID>34D609D3-16D3-EBF3-0750-19770736BAD1</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<referedAttribute>3A73DC8E-F928-DCA9-4241-C8312221D5A6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_cuenta" id="9E10AB6A-CB14-87E5-A54A-DA5A3ABF6702">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 00:28:57 UTC</createdTime>
+<generatorID>AFB15A4B-F34B-CD17-B679-EACA86A748F0</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<referedAttribute>D0CEB854-EB76-7A5C-BDC0-94B8AF5A0317</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_cliente" id="380F09DB-0E1A-4CF7-4D33-7890A607E1AB">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-23 00:28:57 UTC</createdTime>
+<generatorID>AFB15A4B-F34B-CD17-B679-EACA86A748F0</generatorID>
+<ownerDesignName>DB_G13</ownerDesignName>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="true"/>
+</engineerTo>
+<referedAttribute>D4D7A07E-84EC-499D-762C-0CEDAB265774</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="21F043E7-7F62-AFAC-6465-1FA9DC235D6C" name="Transacciones PK">
+<createdBy>mesoi</createdBy>
+<createdTime>2024-09-13 04:31:35 UTC</createdTime>
+<ownerDesignName>DB_G13</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="961B8C99-B512-7E8A-0731-14A4EBE42F8B" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4C8086BC-9610-3795-EAA7-A42196846565</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
