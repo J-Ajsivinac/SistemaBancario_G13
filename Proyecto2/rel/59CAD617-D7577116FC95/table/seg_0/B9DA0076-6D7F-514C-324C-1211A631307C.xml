@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B9DA0076-6D7F-514C-324C-1211A631307C" name="CUENTAS">
+<sourceDDLFile>SBancario.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:44 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>4D14F2F5-F057-8D6A-3C2B-1A1D88043E63</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="BFB96449-1413-8539-9A9B-CB510A9A1386">
+<sourceDDLFile>SBancario.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:44 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>7B182367-6E48-948D-5AC3-96198CE25A7A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="NUMERO_DE_CUENTA" id="E44A28B3-B77E-0295-498D-2FCB68E9B10E">
+<sourceDDLFile>SBancario.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:44 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>33794CF9-02EA-DCCC-E36E-0110ED1BAB02</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>F4B6A125-75F0-FF2A-38D2-0A7DD06322E5</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_TIPO_DE_CUENTA" id="CF67563A-531A-0C30-1427-C5A666A76614">
+<sourceDDLFile>SBancario.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:44 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>22CDCB15-6F8C-1BBE-69CB-A434E5FCCA3E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0CF54D46-E6C8-F70B-7D73-AB0C00283984" referredColumn="F1F99C11-D507-298F-912E-86999361C5B0"/>
+</associations>
+</Column>
+<Column name="SALDO" id="31784F42-2FA3-C8DF-AED1-481D4CBAE369">
+<sourceDDLFile>SBancario.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:44 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>8393D673-6654-2446-71DA-0456DD981089</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>E0E2BA44-5CB8-4F81-5513-04176697B5B3</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A1774B06-0D1B-6A38-6A27-54DAA7B25400" name="PK_CUENTAS">
+<sourceDDLFile>SBancario.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:44 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>3925CFF2-46C0-3AA9-6E1E-ADB57232927C</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BFB96449-1413-8539-9A9B-CB510A9A1386"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="735643FC-CEE2-2C4F-86BC-18A2D51D4588" name="FK_CUENTAS_TIPO_DE_CUENTAS">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:44 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CF67563A-531A-0C30-1427-C5A666A76614"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

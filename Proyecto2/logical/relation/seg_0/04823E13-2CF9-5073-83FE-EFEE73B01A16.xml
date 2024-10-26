@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_SUELDOS_EMPLEADOS" directorySegmentName="seg_0" id="04823E13-2CF9-5073-83FE-EFEE73B01A16">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:22:26 UTC</createdTime>
+<generatorID>4F991EC0-1E0C-1A27-F9C5-674CBF56C242</generatorID>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<sourcePk>F0C0C398-84DD-F88A-4D04-1D8E8BBD23AF</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>9A90A33A-834F-3D0A-B6FB-8A0B9C70C283</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>425C2054-87C7-2F8F-E374-2069E0E7CAC2</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

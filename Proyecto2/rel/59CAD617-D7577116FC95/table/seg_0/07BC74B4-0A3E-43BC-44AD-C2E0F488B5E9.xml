@@ -1,0 +1,153 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="07BC74B4-0A3E-43BC-44AD-C2E0F488B5E9" name="Prestamos">
+<sourceDDLFile>SBancario.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:44 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>9F143625-40F9-51E2-9AAB-CD9F677F11FF</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_Prestamo" id="E3F00A42-F220-D1C8-E541-8B8915D96DFA">
+<sourceDDLFile>SBancario.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:44 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>6F8D6DA6-1B72-3F32-F68E-34CA661C877D</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="ID_Cliente" id="F6EB2516-2F02-1F2E-39D3-AFFD121466E1">
+<sourceDDLFile>SBancario.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:44 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>DF781217-A866-B115-2E71-3B2AA56E5E33</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A8117096-A8C9-4ED7-1E2F-AC5D266F33CC" referredColumn="E4D53E1B-A6A3-3A22-FE7A-1EF12FB97627"/>
+</associations>
+</Column>
+<Column name="Monto_del_Prestamo" id="36C35A3C-4420-395D-8EC9-E6399A9E9C7F">
+<sourceDDLFile>SBancario.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:44 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>55C7220D-B515-49BE-2421-F1E7F7E19C66</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>E0E2BA44-5CB8-4F81-5513-04176697B5B3</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Tasa_de_Interes" id="3D45D0F8-8F03-487B-1BB6-B27890DEE269">
+<sourceDDLFile>SBancario.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:44 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>19D9F012-7256-D1C6-2507-B35AE535CA62</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>DEA4D87D-4988-8CDD-AA7D-4DEDA67F7E6D</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Fecha_de_Desembolso" id="CDD78D96-2AB0-513E-2EFD-6B245388E48D">
+<sourceDDLFile>SBancario.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:44 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>85A73904-0D5D-F4CB-B578-41766952BBAE</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>8B8E7CDD-EEBD-978E-CF3A-4C1529A27181</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Fecha_de_Vencimiento" id="8AF25C91-A5D0-5290-1A96-9B8FCD1C89BA">
+<sourceDDLFile>SBancario.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:44 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>388D7E1D-F449-0199-DAB5-C06303F572CB</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>8B8E7CDD-EEBD-978E-CF3A-4C1529A27181</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Saldo_Pendiente" id="A1D52533-6F0B-EE52-0FEC-B149B5680020">
+<sourceDDLFile>SBancario.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:44 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>D86AE068-F1C7-1977-8FD1-3A77F0822640</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>E0E2BA44-5CB8-4F81-5513-04176697B5B3</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Estado" id="5085AF9C-F4D9-4D25-A9D4-7C47F7C5C9D6">
+<sourceDDLFile>SBancario.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:44 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>EB40DE28-DA8C-232C-F17F-C167FF62F2C6</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F1D5C5D3-F97C-8159-B391-870248E51B75" referredColumn="D32621E3-B40B-A90C-6420-7C77B472D754"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="42318B31-5F4F-32F1-88BA-711F61E8541C" name="PK_PRESTAMOS">
+<sourceDDLFile>SBancario.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:44 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>69C1AC16-FF9B-CED2-9884-E26DE63AF8A7</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E3F00A42-F220-D1C8-E541-8B8915D96DFA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B10A1C2E-7049-EFE0-1DB2-155328A016FE" name="FK_Prestamo_Estado">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:44 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5085AF9C-F4D9-4D25-A9D4-7C47F7C5C9D6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D176A56A-47AC-6A1E-E689-A4026E682413" name="FK_Prestamo_Cliente">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:44 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F6EB2516-2F02-1F2E-39D3-AFFD121466E1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

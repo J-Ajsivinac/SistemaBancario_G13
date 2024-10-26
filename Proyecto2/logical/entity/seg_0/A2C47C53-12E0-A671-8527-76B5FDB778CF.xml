@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A2C47C53-12E0-A671-8527-76B5FDB778CF" name="Departamentos">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:43 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>177BB8FC-7F2E-9F43-B1BF-3058DDB87FBC</importedID>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="94F23DC8-E345-033C-CBB8-C10200B49789">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:43 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>FFFB17B0-C0F7-E641-5A60-C0910915FE65</importedID>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Departamento" id="1A3EA85A-ECBE-89EE-FD53-72121F8B5793">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:43 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>89C15198-62ED-36B2-7951-F2EEA6CD6807</importedID>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>EA7C361B-4790-6831-40E9-B07BE508762E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F038CB29-4D7A-3DE9-B312-18C332CB15DC" name="PK DEPARTAMENTOS">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:43 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>5C45D175-BE65-E5A7-75CC-95098AFF429C</importedID>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>94F23DC8-E345-033C-CBB8-C10200B49789</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

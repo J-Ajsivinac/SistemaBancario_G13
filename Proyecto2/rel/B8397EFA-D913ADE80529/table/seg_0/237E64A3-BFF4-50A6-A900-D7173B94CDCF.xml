@@ -1,0 +1,55 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="237E64A3-BFF4-50A6-A900-D7173B94CDCF" name="TIPOS_DE_TRANSACCIONES">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>0CA0B68F-41DA-8D2A-EBC1-469626FCB727</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="61A132D3-BCB8-2C7B-4882-7B6839E60FFA">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>C7A55FA9-135B-6966-BBC6-2304135A7A50</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="TIPO" id="A1ED4703-629B-BD1E-4595-DD526F060AEA">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>A5F1D454-4F62-9ADF-AEBA-2C110E76F45E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>EA7C361B-4790-6831-40E9-B07BE508762E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F01D3756-0AC3-CE1B-18E3-537523AA656A" name="PK_TIPOS_DE_TRANSACCIONES">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>B62C8FCA-20FD-0730-E9F5-70DC83131687</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="61A132D3-BCB8-2C7B-4882-7B6839E60FFA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="CUENTAS" directorySegmentName="seg_0" id="EA94CEF9-E341-48B6-D19B-1D4A0B0F0C9B">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ID_TIPO_DE_CUENTA" id="3034F1D4-A952-F7BC-E841-01586F9E356E">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SALDO" id="32100B8D-FE65-7183-32A2-C019DE077B7B">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NUMERO_DE_CUENTA" id="8CEECDFE-6085-FA5D-E8C6-C5FE0DC72D3E">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ID" id="F63BA9D3-87C4-4277-4399-4ECEA056313D">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_CUENTAS_TIPO_DE_CUENTAS" id="05E788D5-65FD-B2BA-8419-41757EDF4445">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_CUENTAS" id="2C587BB0-1B55-92F3-3F1B-19359FFD02EE">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

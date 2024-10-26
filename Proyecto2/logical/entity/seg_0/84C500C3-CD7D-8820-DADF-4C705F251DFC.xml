@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="84C500C3-CD7D-8820-DADF-4C705F251DFC" name="TIPO DE CUENTAS">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:43 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>91CBBFFE-C8E1-7009-D7E8-0C358C628281</importedID>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="5D735436-F2E3-AE24-837B-8350794B3F49">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:43 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>53A0636F-C8B9-34A8-0567-DF5EAF3358E5</importedID>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TIPO" id="545F97C3-CA09-3123-9947-14811B5A45CC">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:43 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>0C85DE8E-5A1F-0653-2B2F-F4D13A5560CA</importedID>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>EA7C361B-4790-6831-40E9-B07BE508762E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B6655752-CD8E-7FC5-20FC-B54A760D6B98" name="PK TIPO DE CUENTAS">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:43 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>3AD2DAD5-28CD-E00E-EF7C-4E2EA3A2E66C</importedID>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5D735436-F2E3-AE24-837B-8350794B3F49</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

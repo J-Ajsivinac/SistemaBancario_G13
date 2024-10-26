@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E1EE253E-FE83-F0B3-27EC-C088A78D3255" name="UBICACIONESv1">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:22:26 UTC</createdTime>
+<generatorID>6A5861D8-5D6D-50E5-A107-F914209D3AD0</generatorID>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="CACC379B-9239-8099-F05D-DB0933616744">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:22:26 UTC</createdTime>
+<generatorID>73F8F145-0963-F30F-4699-655DB1C6D507</generatorID>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID DEPARTAMENTO" id="AFE149AA-7F91-1C6F-2058-33C67BB6A663">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:22:26 UTC</createdTime>
+<generatorID>088019C5-D9A9-F689-A9D0-384BD5C366EC</generatorID>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<referedAttribute>B4D87C42-B808-CE78-9783-D024D67FEBFC</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID MUNICIPIO" id="10B7385B-A19C-4BC0-9341-553DF87DAD19">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:22:26 UTC</createdTime>
+<generatorID>B209DF98-5381-0432-D114-C2F5DE35A260</generatorID>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<referedAttribute>6E565A06-3F25-C4CC-3B0B-BCBEA5B5F4BC</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID CODIGO POSTAL" id="29F923FF-EAEB-E0FC-F13E-421FC35D9F88">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:22:26 UTC</createdTime>
+<generatorID>19CFB493-A6C2-89DE-AAD0-5F2F28558009</generatorID>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<referedAttribute>4CCC3EB5-1A20-9AC1-F348-B54CE634A5F7</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="65C93DDC-8EE7-0F9A-1D1F-2E1DC7ECD559" name="PK UBICACIONES">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:22:26 UTC</createdTime>
+<generatorID>A9F4B36D-AFF8-FBA6-E95D-1E5CD458559E</generatorID>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>CACC379B-9239-8099-F05D-DB0933616744</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
