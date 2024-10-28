@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_Prestamo_Cliente" directorySegmentName="seg_0" id="B9031E7A-896D-F855-7CA7-FA6E7D1A76E8">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:43 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>B1511D1A-8C49-C682-F984-D26D5BE95475</importedID>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<sourcePk>C9CB458C-E186-19C1-05E0-425FDFC10D36</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>8C340AF0-4BCC-92C9-4127-64BD99910FEB</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>0FAF63BA-F711-074D-88EA-58BAD9A3FED8</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

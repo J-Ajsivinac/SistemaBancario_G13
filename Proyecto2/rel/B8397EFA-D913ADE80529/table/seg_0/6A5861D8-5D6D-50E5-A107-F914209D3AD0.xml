@@ -1,0 +1,118 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6A5861D8-5D6D-50E5-A107-F914209D3AD0" name="UBICACIONES">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>915E3B32-16AF-D150-6D6E-28B7C5CB885F</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="73F8F145-0963-F30F-4699-655DB1C6D507">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>CB127715-8D13-EB8B-CBAB-F0F0EA4EC0B4</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="ID_DEPARTAMENTO" id="58130739-7D0A-9C88-9DE6-C9C8332C3C66">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>01F30E4F-BC43-7B21-675B-1A5F1F08134E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CDC13A9D-7B55-3815-B012-9872CC316B8E" referredColumn="DB438806-7140-98C1-53EB-7CE09D9ED9AE"/>
+</associations>
+</Column>
+<Column name="ID_MUNICIPIO" id="6A647A15-34D7-FE69-36F3-98316B638EFB">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>814F854E-7185-1F26-5049-10A29D00A6BF</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BF823850-1CA3-6B63-E319-8A851B048499" referredColumn="52E6A942-798F-4E9A-790E-EA44EE8232C3"/>
+</associations>
+</Column>
+<Column name="ID_CODIGO_POSTAL" id="95CC978D-1C78-85AC-72DF-7DA200647415">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>5FCE445B-A387-E6B7-FFD0-8B3A0F62B09B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0A4AEB83-742E-6BF7-76D3-003C341318A8" referredColumn="B5C29860-5C39-2993-2F35-E984E2F61DB6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A9F4B36D-AFF8-FBA6-E95D-1E5CD458559E" name="PK_UBICACIONES">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>B6021D19-4D96-C80A-5626-A24664832A9A</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="73F8F145-0963-F30F-4699-655DB1C6D507"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B708FC0F-6936-7566-FC60-DBEE88BD7DE0" name="FK_UBICACION_CODIGOPOSTAL">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="95CC978D-1C78-85AC-72DF-7DA200647415"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8DCF8144-F553-E549-EE67-56E0DC34BF14" name="FK_UBICACION_DEPARTAMENTO">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="58130739-7D0A-9C88-9DE6-C9C8332C3C66"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9E39C67F-3BCD-5574-4DCB-917F1DF66AA4" name="FK_UBICACION_MUNICIPIO">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6A647A15-34D7-FE69-36F3-98316B638EFB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

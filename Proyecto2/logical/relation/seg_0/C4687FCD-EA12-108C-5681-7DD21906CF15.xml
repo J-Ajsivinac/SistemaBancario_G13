@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_TARJETA_ESTADOv1" directorySegmentName="seg_0" id="C4687FCD-EA12-108C-5681-7DD21906CF15">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:22:26 UTC</createdTime>
+<generatorID>4F6FDAFA-90E6-0F34-E395-BBC282CF4449</generatorID>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<sourcePk>C1DF7EEF-77AA-BA18-1914-F775A09F4705</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>C47DC2CD-5E30-11D2-FCE9-85855F4255D3</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>F8F32677-E1E2-0826-DCF1-3979436FC55B</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
