@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_TRANSACCIONES_INTERBANCARIAS_DESTINO" directorySegmentName="seg_0" id="E7F99CCF-4472-86E8-C9B4-892273AA7D81">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:22:26 UTC</createdTime>
+<generatorID>F5F8452B-8DFE-0D14-CA39-CF73CBAB87D1</generatorID>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<sourcePk>F5B436A7-6AE2-9930-5B7B-0E10ED980E47</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>0D782883-2D01-7558-6FBB-AE544CF73399</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>CD4157A7-3347-4D75-DA4F-BB77AF33829B</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

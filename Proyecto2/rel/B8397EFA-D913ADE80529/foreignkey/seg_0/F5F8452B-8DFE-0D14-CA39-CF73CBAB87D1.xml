@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F5F8452B-8DFE-0D14-CA39-CF73CBAB87D1" containerWithKeyObject="77051B58-1677-E5DE-D926-80F5B0D25719" localFKIndex="44D24D0D-B243-BF39-59A1-0B0EF1598F5B" name="FK_TRANSACCIONES_INTERBANCARIAS_DESTINO">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>ABA75BAE-273C-6499-135E-74C18E52B3A3</importedID>
+<referredTableLongName>SUCURSALES_AGENCIAS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>03742715-ED19-659F-7348-9AA6ED14A179</referredTableID>
+<keyObject>BA354EEB-2E61-8E6D-3E0F-BA2611A36278</keyObject>
+<referredKeyID>BA354EEB-2E61-8E6D-3E0F-BA2611A36278</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

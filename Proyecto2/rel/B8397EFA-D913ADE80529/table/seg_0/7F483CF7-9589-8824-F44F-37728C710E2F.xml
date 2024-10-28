@@ -1,0 +1,147 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7F483CF7-9589-8824-F44F-37728C710E2F" name="ESTADOS_FINANCIEROS">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>4C1617A2-43BF-2B79-DCC9-347F5DB57C6B</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="5BE1F2CF-2FD9-413B-7898-5BE592BB938B">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>78F85E1D-1DB7-3556-47DF-5632750D6680</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="FECHA" id="06F77B30-47B2-D599-50C4-D791CEFB152E">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>1B251AFE-AA2D-BAFD-E983-DBC07BEDBC0A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>8B8E7CDD-EEBD-978E-CF3A-4C1529A27181</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="INGRESO" id="5F1F6789-065E-848E-12EC-F0ED444B6E43">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>5E1AB8AB-D81A-92E3-198E-399F40D33CD4</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>E83C7534-D313-8467-39B6-84F057AFC133</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GASTOS" id="44513843-4D82-85C3-5227-D9AA44DEC963">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>C1F33497-7F16-3808-A644-86E4517D7ED8</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>E83C7534-D313-8467-39B6-84F057AFC133</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_TIPO_ESTADO" id="21AB46B5-7D62-F466-C7D7-DF34557EDA91">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>0DC9CE08-0F94-76C5-85A3-EBD2015D9792</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6A09F6F4-BFC9-0C12-6D70-BCC51CE0620D" referredColumn="A5248B0B-3D02-5AC1-2596-B6BA3CF6651B"/>
+</associations>
+</Column>
+<Column name="ID_SUCURSAL_AGENCIA" id="2C94753B-716C-9C7C-D553-1E8FAA68CC26">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>862B9917-34D4-D597-78B2-695D488C5267</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="98904578-0EA8-666B-54C0-6EE532A8B0A2" referredColumn="A58775AB-078A-1D22-6CC8-B888A752BFAE"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="439B1F78-157F-BEF7-C7AE-877272AB49F3" name="ESTADOS_FINANCIEROS_PK">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>720F6FF4-B5E6-D9AF-90FF-40FAF1616D1F</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5BE1F2CF-2FD9-413B-7898-5BE592BB938B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2BDC1940-67C8-6097-2502-DBA1EE28ECE1" name="FK_ESTADO_FINANCIERO_SUCURSALAGENCIA">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2C94753B-716C-9C7C-D553-1E8FAA68CC26"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FA588B68-DCDE-CA99-BB4A-6C93C6DCB4C7" name="FK_ESTADO_FINANCIERO_TIPO_ESTADO">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="21AB46B5-7D62-F466-C7D7-DF34557EDA91"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="CK_INGRESOS_POSITIVOS" directorySegmentName="seg_0" id="A3045D0A-F274-AAB6-6C05-2A68CD4AAD45">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>4B357444-1BF6-9462-F0C4-F714DCB2C010</importedID>
+<rule><![CDATA[INGRESO >= 0]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="CK_GASTOS_POSITIVOS" directorySegmentName="seg_0" id="1A0E274C-4CF4-FBC1-497E-A3B4E55D3C14">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>5F326AB2-C882-A8A1-D88F-7EEAA74F422F</importedID>
+<rule><![CDATA[GASTOS >= 0]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

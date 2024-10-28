@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="00ABE5D3-91E8-52DC-D3FD-22D2FAAFEB2E" containerWithKeyObject="25015E7B-87DD-0759-1DF9-A77B8532291C" localFKIndex="4E9F6F7C-1C59-B5D1-4A26-BFC7758288B0" name="FK_BOVEDAS_SUCURSALES">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>94D96E89-FED6-0955-3AF8-AD805DDFE612</importedID>
+<referredTableLongName>SUCURSALES_AGENCIAS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>03742715-ED19-659F-7348-9AA6ED14A179</referredTableID>
+<keyObject>BA354EEB-2E61-8E6D-3E0F-BA2611A36278</keyObject>
+<referredKeyID>BA354EEB-2E61-8E6D-3E0F-BA2611A36278</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
