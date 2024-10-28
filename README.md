@@ -697,7 +697,7 @@ Identificando relaciones a través de la matriz
 
 ![Fisico_Relacional.svg](img/Fisico_Relacional.svg)
 
-# Documentación de la Consulta SQL Oracle
+# Documentación de las Consultas SQL Oracle
 
 # Consulta # 1:
 ## ¿Está el banco en quiebra o en punto de equilibrio?
