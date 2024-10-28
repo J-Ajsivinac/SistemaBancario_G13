@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="DB_G13" id="FF5ED75A-57F5-33F9-3356-8EACCBF2994C" version="3.5">
-<createdBy>mesoi</createdBy>
-<createdTime>2024-09-13 01:21:45 UTC</createdTime>
-<ownerDesignName>DB</ownerDesignName>
-<capitalNames>false</capitalNames>
-<designId>FF5ED75A-57F5-33F9-3356-8EACCBF2994C</designId>
-</OSDM_Design>
