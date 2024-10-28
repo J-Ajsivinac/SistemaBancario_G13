@@ -41,7 +41,7 @@ Un diagrama conceptual de una base de datos es una representación visual que mu
 
 ### Diagrama Conceptual
 
-![image.png](image.png)
+![image.png](img/image.png)
 
 ### Descripción del Ejemplo
 
@@ -691,8 +691,154 @@ Identificando relaciones a través de la matriz
 
 # Modelo Lógico
 
-![Logical.svg](Logical.svg)
+![Logical.svg](img/Logical.svg)
 
 # Modelo Físico (Relacional)
 
-![Fisico_Relacional.svg](Fisico_Relacional.svg)
+![Fisico_Relacional.svg](img/Fisico_Relacional.svg)
+
+# Documentación de la Consulta SQL Oracle
+
+# Consulta # 1:
+## ¿Está el banco en quiebra o en punto de equilibrio?
+
+### Explicación
+
+1. **Definición de Activos:**
+    - Se crea una `CTE (Common Table Expression)` llamada `Activos` que calcula tres valores:
+        - `TotalCuentas`: La suma de los saldos de todas las cuentas.
+        - `TotalPrestamos`: La suma de los montos de todos los préstamos otorgados a los clientes.
+        - `TotalIngresos`: La suma de los ingresos registrados en los estados financieros.
+
+    ```sql
+    WITH Activos AS (
+        SELECT 
+            (SELECT SUM(SALDO) FROM CUENTAS) AS TotalCuentas,
+            (SELECT SUM(MONTO_DEL_PRESTAMO) FROM PRESTAMOS) AS TotalPrestamos,
+            (SELECT SUM(INGRESO) FROM ESTADOS_FINANCIEROS) AS TotalIngresos
+        FROM DUAL
+    )
+    ```
+
+2. **Definición de Pasivos:**
+    - Se crea otra `CTE` llamada `Pasivos` que calcula tres valores:
+        - `TotalGastos`: La suma de todos los gastos registrados en los estados financieros.
+        - `TotalSueldos`: La suma de todos los sueldos, bonos (si los hay) y deducciones (si las hay) de los empleados.
+        - `TotalDeudas`: La suma de los montos de los préstamos que han sido rechazados, considerados como deudas incobrables.
+
+    ```sql
+    Pasivos AS (
+        SELECT 
+            (SELECT SUM(GASTOS) FROM ESTADOS_FINANCIEROS) AS TotalGastos,
+            (SELECT SUM(SUELDO + NVL(BONOS, 0) - NVL( DEDUCCIONES, 0)) FROM SUELDOS) AS TotalSueldos,
+            (SELECT SUM(MONTO_DEL_PRESTAMO) FROM PRESTAMOS WHERE ID_ESTADO = (SELECT ID FROM ESTADOS_DE_PRESTAMOS WHERE ESTADO = 'Rechazado')) AS TotalDeudas
+        FROM DUAL
+    )
+    ```
+
+3. **Determinación del Estado Financiero:**
+    - Finalmente, se compara la suma de los activos (`TotalCuentas + TotalPrestamos + TotalIngresos`) con la suma de los pasivos (`TotalGastos + TotalSueldos + TotalDeudas`).
+    - Dependiendo del resultado, se determina si el banco está en `Equilibrio` o en `Quiebra`.
+
+    ```sql
+    SELECT CASE
+            WHEN (A.TotalCuentas + A.TotalPrestamos + A.TotalIngresos) >= (P.TotalGastos + P.TotalSueldos + P.TotalDeudas) THEN 'Equilibrio'
+            WHEN (A.TotalCuentas + A.TotalPrestamos + A.TotalIngresos) < (P.TotalGastos + P.TotalSueldos + P.TotalDeudas) THEN 'Quiebra'
+        END AS EstadoFinanciero
+    FROM Activos A, Pasivos P;
+    ```
+
+### Resultados
+El resultado de esta consulta será un único valor: `Equilibrio` o `Quiebra`, que representa el estado financiero actual del banco.
+
+
+![consulta1.png](img/consulta1.png)
+
+---
+
+# Consulta # 2:
+
+## ¿Cuánto dinero debe enviarse a cada sucursal o agencia?
+
+### Explicación de la consulta
+
+1. **TransaccionesDiarias:**
+    - Se crea una CTE llamada `TransaccionesDiarias` que calcula el total de transacciones monetarias (`TotalTransacciones`) realizadas en cada sucursal/agencia (`ID_SUCURSAL_AGENCIA`), tomando en cuenta todas las fechas.
+
+    ```sql
+    WITH TransaccionesDiarias AS (
+        SELECT ID_SUCURSAL_AGENCIA, SUM(MONTO) AS TotalTransacciones
+        FROM TRANSACCIONES
+        GROUP BY ID_SUCURSAL_AGENCIA
+    )
+    ```
+
+2. **DemandaLocal:**
+    - Se crea otra CTE llamada `DemandaLocal` que calcula el número de transacciones (`NumeroTransacciones`) realizadas en cada sucursal/agencia, tomando en cuenta todas las fechas.
+
+    ```sql
+    DemandaLocal AS (
+        SELECT ID_SUCURSAL_AGENCIA, COUNT(*) AS NumeroTransacciones
+        FROM TRANSACCIONES
+        GROUP BY ID_SUCURSAL_AGENCIA
+    )
+    ```
+
+3. **Determinación del efectivo a enviar:**
+    - Finalmente, se unen las CTE `TransaccionesDiarias` y `DemandaLocal` para calcular cuánto efectivo debe enviarse a cada sucursal/agencia (`EfectivoAEnviar`).
+    - Además, se une la tabla `SUCURSALES_AGENCIAS` para obtener el nombre de la sucursal o agencia (`SA.NOMBRE`).
+
+    ```sql
+    SELECT T.ID_SUCURSAL_AGENCIA, SA.NOMBRE,
+           (T.TotalTransacciones + D.NumeroTransacciones * 100) AS EfectivoAEnviar
+    FROM TransaccionesDiarias T
+    JOIN DemandaLocal D ON T.ID_SUCURSAL_AGENCIA = D.ID_SUCURSAL_AGENCIA
+    JOIN SUCURSALES_AGENCIAS SA ON T.ID_SUCURSAL_AGENCIA = SA.ID;
+    ```
+
+### Resultados
+El resultado de esta consulta será el ID y el nombre de cada sucursal o agencia junto con la cantidad de efectivo que debe enviarse a cada una.
+
+![consulta2.png](img/consulta2.png)
+
+---
+
+# Consulta # 3:
+
+## ¿Cuánto dinero debe almacenarse en la bóveda central?
+
+### Explicación de la consulta
+
+1. **TotalDepositos:**
+    - Se crea una CTE llamada `TotalDepositos` que calcula la suma de los saldos (`SALDO`) de todas las cuentas en la tabla `CUENTAS`.
+
+    ```sql
+    WITH TotalDepositos AS (
+        SELECT SUM(SALDO) AS TotalDepositos
+        FROM CUENTAS
+    )
+    ```
+
+2. **RegulacionesSIB:**
+    - Se crea otra CTE llamada `RegulacionesSIB` que define el porcentaje mínimo de liquidez requerido por la SIB. En este ejemplo, el porcentaje mínimo es del 10% (0.1).
+
+    ```sql
+    RegulacionesSIB AS (
+        SELECT 0.1 AS PorcentajeMinimo -- Ejemplo: 10% de liquidez mínima requerida
+        FROM DUAL
+    )
+    ```
+
+3. **Cálculo del dinero en la bóveda central:**
+    - Finalmente, se multiplica el total de depósitos (`TotalDepositos`) por el porcentaje mínimo de liquidez (`PorcentajeMinimo`) para determinar cuánto dinero debe mantenerse en la bóveda central (`DineroEnBovedaCentral`).
+
+    ```sql
+    SELECT TotalDepositos * PorcentajeMinimo AS DineroEnBovedaCentral
+    FROM TotalDepositos, RegulacionesSIB;
+    ```
+
+### Resultados
+El resultado de esta consulta será el monto de dinero que debe permanecer en la bóveda central del banco para cumplir con las regulaciones de la SIB sobre el porcentaje mínimo de liquidez.
+
+![consulta3.png](img/consulta3.png)
+---
