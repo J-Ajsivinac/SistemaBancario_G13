@@ -1,0 +1,80 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1FF1BDC5-AB50-E40D-5C96-15C1DD45F310" name="BOVEDAS">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:22:26 UTC</createdTime>
+<generatorID>25015E7B-87DD-0759-1DF9-A77B8532291C</generatorID>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID BOVEDA" id="2550EA5E-85C1-FC6A-2993-443495E87A8D">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:22:26 UTC</createdTime>
+<generatorID>994C77F9-CB88-F565-CABE-70D20F4CD9AB</generatorID>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID AGENCIA SUCURSAL" id="F63DA543-F77F-C978-61EA-79FCCA94F983">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:22:26 UTC</createdTime>
+<generatorID>4DB3CAE7-4B5A-ED7A-F7FC-E12548513B88</generatorID>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<referedAttribute>72C70BE4-EE0B-C11B-E39B-D6F737E58527</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FONDOS DISPONIBLES" id="EDC87AAD-FE20-EFF5-6D11-03F4BF64B8EF">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:22:26 UTC</createdTime>
+<generatorID>D6C78D06-6878-6363-CA44-22007E9D5DD0</generatorID>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>E83C7534-D313-8467-39B6-84F057AFC133</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8C422B93-7478-7F3F-388D-3844714D4F72" name="PK BOVEDAS">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:22:26 UTC</createdTime>
+<generatorID>D36986DF-ED0F-7515-A028-6864AF89527E</generatorID>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>2550EA5E-85C1-FC6A-2993-443495E87A8D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

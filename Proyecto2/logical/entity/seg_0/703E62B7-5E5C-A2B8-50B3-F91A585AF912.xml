@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="703E62B7-5E5C-A2B8-50B3-F91A585AF912" name="TIPOS DE SUELDO">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:22:26 UTC</createdTime>
+<generatorID>76BFE93C-39D4-F500-0257-55D36324845B</generatorID>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="0B1A70D9-6544-4B56-6842-0B2C22BDD614">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:22:26 UTC</createdTime>
+<generatorID>C15AAD1F-FB23-D905-BF0A-B2325ADD16A7</generatorID>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="TIPO" id="13521B11-D47F-0832-691E-FBB3D80E3066">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:22:26 UTC</createdTime>
+<generatorID>C24EA5B0-F378-8333-9553-F615ADC07B9F</generatorID>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>F4B6A125-75F0-FF2A-38D2-0A7DD06322E5</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="3953053D-A6F2-DFE1-2108-1013B6DF8973" name="TIPOS DE SUELDO PK">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:22:26 UTC</createdTime>
+<generatorID>E4F682CF-43F2-B1FE-A339-4EBD05D426C8</generatorID>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0B1A70D9-6544-4B56-6842-0B2C22BDD614</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

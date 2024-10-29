@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="FK_UBICACION_CODIGOPOSTALv1" directorySegmentName="seg_0" id="19CFB493-A6C2-89DE-AAD0-5F2F28558009">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:22:26 UTC</createdTime>
+<generatorID>0A4AEB83-742E-6BF7-76D3-003C341318A8</generatorID>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<sourcePk>B939098D-4193-7D18-FF33-9945B7E8914C</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>C7005271-C7C2-EF3C-A742-DFA2CD56D699</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>E1EE253E-FE83-F0B3-27EC-C088A78D3255</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

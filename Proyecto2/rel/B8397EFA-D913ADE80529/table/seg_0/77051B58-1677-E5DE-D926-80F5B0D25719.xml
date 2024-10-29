@@ -1,0 +1,148 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="77051B58-1677-E5DE-D926-80F5B0D25719" name="TRANSACCIONES_INTERBANCARIAS">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>65126E5E-CDB8-DD75-64EC-7390DE02DF0A</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="9B1B7713-9876-06CE-6CE5-00203E85F70F">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>5E4A3256-B4CC-17F0-46D0-34AB2056E6C8</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="ID_SUCURSAL_AGENCIA_ORIGEN" id="E97BF5E3-EE56-F46B-050E-DF3BC00D164E">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>7758906C-66C6-92BA-77E0-7F6FD1F0C76F</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E1046ABB-7B8C-8683-F14F-1A9AA7849DC1" referredColumn="A58775AB-078A-1D22-6CC8-B888A752BFAE"/>
+</associations>
+</Column>
+<Column name="ID_SUCURSAL_AGENCIA_DESTINO" id="548D2D60-25D8-F689-0BF4-DF2AAAB3DE9F">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>20D3824C-CDA9-8D51-4FCA-576C2BA603E2</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F5F8452B-8DFE-0D14-CA39-CF73CBAB87D1" referredColumn="A58775AB-078A-1D22-6CC8-B888A752BFAE"/>
+</associations>
+</Column>
+<Column name="MONTO" id="A2127427-D434-411C-167F-4E1B068DA305">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>3C857C46-537D-D89E-C2EF-9C65596CE9E4</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>E83C7534-D313-8467-39B6-84F057AFC133</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_HORA" id="B089ADA4-47BE-2B00-C76B-DCD927A6B1FC">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>89882DB0-082A-D907-6DDC-FF7741B95A53</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
+<domain>07CFFA40-4CB8-FE75-2B50-8705FB1F87AA</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRIPCION" id="DEA1AE0A-976A-48B2-6150-3AF548551385">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>C55E5E74-6155-6595-76E2-5A8F5F183F7E</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>013E8143-9F7D-B469-A836-0384C12AAED1</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A5E5A7F8-A46C-209B-B76E-E4F8B5586FE4" name="TRANSACCIONES_INTERBANCARIAS_PK">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>648BAE9E-2289-4128-4D77-5AF4BC184B30</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9B1B7713-9876-06CE-6CE5-00203E85F70F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="44D24D0D-B243-BF39-59A1-0B0EF1598F5B" name="FK_TRANSACCIONES_INTERBANCARIAS_DESTINO">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="548D2D60-25D8-F689-0BF4-DF2AAAB3DE9F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CAC59FA9-5854-55F2-CA10-53A576680B35" name="FK_TRANSACCIONES_INTERBANCARIAS_ORIGEN">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E97BF5E3-EE56-F46B-050E-DF3BC00D164E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="CK_MONTO_POSITIVO" directorySegmentName="seg_0" id="2BE61163-0D3D-35DA-8CDA-5211C569248C">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>3377E14B-4D9A-E391-0BCB-371ECDFEDFB8</importedID>
+<rule><![CDATA[MONTO > 0]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="CK_ORIGEN_DESTINO_DIFERENTE" directorySegmentName="seg_0" id="A0F7E254-D530-419B-C9C9-93BCF2E7FAD9">
+<sourceDDLFile>SBancarioP2.sql</sourceDDLFile>
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:17:40 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>C2B61B86-B69A-55C1-A224-E0CA3DC23BC4</importedID>
+<rule><![CDATA[ID_SUCURSAL_AGENCIA_ORIGEN <> ID_SUCURSAL_AGENCIA_DESTINO]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

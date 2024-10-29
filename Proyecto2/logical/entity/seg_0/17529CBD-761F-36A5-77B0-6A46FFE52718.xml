@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="17529CBD-761F-36A5-77B0-6A46FFE52718" name="Codigos Postales">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:43 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>B2D1E59A-2C78-E19A-1E2E-8EF10816DBC1</importedID>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Codigo" id="66B8EBB9-446D-CF22-D168-14916981F39A">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:43 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>19AF049C-8DF9-C2C1-3FE7-C8C61B169211</importedID>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>0B51EA89-1030-31FC-72E9-4B0675FD7627</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Direccion" id="B8D91BBA-8B7C-E6CD-8757-DF2124755244">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:43 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>0EFF6A8B-0770-49CF-A93F-86470C711CB4</importedID>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>EA7C361B-4790-6831-40E9-B07BE508762E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="42F73B34-B268-9466-85D5-EA2784ABA495" name="PK CODIGOS POSTALES">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:16:43 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<importedID>54BA8912-5F82-4F27-ABE7-E5804DE0A39E</importedID>
+<engineerTo>
+<item key="59CAD617-6D7F-8ECF-4A33-D7577116FC95" value="true"/>
+<item key="B8397EFA-A8B6-B177-1985-D913ADE80529" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>66B8EBB9-446D-CF22-D168-14916981F39A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

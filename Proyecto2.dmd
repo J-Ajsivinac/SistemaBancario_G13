@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Proyecto2" id="7937D6E6-A686-972D-9E15-8D352F61AF93" version="3.5">
+<createdBy>Dell</createdBy>
+<createdTime>2024-10-26 05:15:07 UTC</createdTime>
+<ownerDesignName>Proyecto2</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>7937D6E6-A686-972D-9E15-8D352F61AF93</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="5CAF71AE-D80D-B799-8BF1-DB3D9006E4E0">
+<designStoragePath>C:\SBancario</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="D4BA53D4-6E93-2BEC-BD83-1E6979BE59CC">
+<designStoragePath>C:\Users\Dell\Desktop\datamodeler\proyectos BD1\P1_B1_Alternative\docs\Data_Modeler\SBases1</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="E823EBEB-F610-B12D-A7B3-BC50FF6C7962">
+<designStoragePath>C:\SBancarioP2</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>
