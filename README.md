@@ -41,7 +41,7 @@ Un diagrama conceptual de una base de datos es una representación visual que mu
 
 ### Diagrama Conceptual
 
-![image.png](image.png)
+![image.png](img/image.png)
 
 ### Descripción del Ejemplo
 
@@ -691,276 +691,154 @@ Identificando relaciones a través de la matriz
 
 # Modelo Lógico
 
-![Logical.svg](Logical.svg)
+![Logical.svg](img/Logical.svg)
 
 # Modelo Físico (Relacional)
 
-![Fisico_Relacional.svg](Fisico_Relacional.svg)
+![Fisico_Relacional.svg](img/Fisico_Relacional.svg)
+
+# Documentación de las Consultas SQL Oracle
+
+# Consulta # 1:
+## ¿Está el banco en quiebra o en punto de equilibrio?
+
+### Explicación
+
+1. **Definición de Activos:**
+    - Se crea una `CTE (Common Table Expression)` llamada `Activos` que calcula tres valores:
+        - `TotalCuentas`: La suma de los saldos de todas las cuentas.
+        - `TotalPrestamos`: La suma de los montos de todos los préstamos otorgados a los clientes.
+        - `TotalIngresos`: La suma de los ingresos registrados en los estados financieros.
+
+    ```sql
+    WITH Activos AS (
+        SELECT 
+            (SELECT SUM(SALDO) FROM CUENTAS) AS TotalCuentas,
+            (SELECT SUM(MONTO_DEL_PRESTAMO) FROM PRESTAMOS) AS TotalPrestamos,
+            (SELECT SUM(INGRESO) FROM ESTADOS_FINANCIEROS) AS TotalIngresos
+        FROM DUAL
+    )
+    ```
+
+2. **Definición de Pasivos:**
+    - Se crea otra `CTE` llamada `Pasivos` que calcula tres valores:
+        - `TotalGastos`: La suma de todos los gastos registrados en los estados financieros.
+        - `TotalSueldos`: La suma de todos los sueldos, bonos (si los hay) y deducciones (si las hay) de los empleados.
+        - `TotalDeudas`: La suma de los montos de los préstamos que han sido rechazados, considerados como deudas incobrables.
+
+    ```sql
+    Pasivos AS (
+        SELECT 
+            (SELECT SUM(GASTOS) FROM ESTADOS_FINANCIEROS) AS TotalGastos,
+            (SELECT SUM(SUELDO + NVL(BONOS, 0) - NVL( DEDUCCIONES, 0)) FROM SUELDOS) AS TotalSueldos,
+            (SELECT SUM(MONTO_DEL_PRESTAMO) FROM PRESTAMOS WHERE ID_ESTADO = (SELECT ID FROM ESTADOS_DE_PRESTAMOS WHERE ESTADO = 'Rechazado')) AS TotalDeudas
+        FROM DUAL
+    )
+    ```
+
+3. **Determinación del Estado Financiero:**
+    - Finalmente, se compara la suma de los activos (`TotalCuentas + TotalPrestamos + TotalIngresos`) con la suma de los pasivos (`TotalGastos + TotalSueldos + TotalDeudas`).
+    - Dependiendo del resultado, se determina si el banco está en `Equilibrio` o en `Quiebra`.
+
+    ```sql
+    SELECT CASE
+            WHEN (A.TotalCuentas + A.TotalPrestamos + A.TotalIngresos) >= (P.TotalGastos + P.TotalSueldos + P.TotalDeudas) THEN 'Equilibrio'
+            WHEN (A.TotalCuentas + A.TotalPrestamos + A.TotalIngresos) < (P.TotalGastos + P.TotalSueldos + P.TotalDeudas) THEN 'Quiebra'
+        END AS EstadoFinanciero
+    FROM Activos A, Pasivos P;
+    ```
+
+### Resultados
+El resultado de esta consulta será un único valor: `Equilibrio` o `Quiebra`, que representa el estado financiero actual del banco.
 
 
-## 1. Clientes
-### Registrar un Cliente
-Llama a un procedimiento almacenado `registrar_cliente_y_cuenta` para crear un nuevo cliente y su cuenta asociada.
-```sql
-BEGIN
-    registrar_cliente_y_cuenta(
-        p_nombre => :nombre,
-        p_apellido => :apellido,
-        p_telefono => :telefono,
-        p_numero_de_cuenta => :numero_cuenta,
-        p_id_tipo_de_cuenta => :id_tipo_cuenta,
-        p_saldo => :saldo
-    );
-END;
-/
-```
-![](./imgs/q1.png)
-### Consultar Clientes y Cuentas
-Obtiene información de todas las entradas en las tablas `clientes` y `cuentas`.
-```sql
-SELECT * FROM clientes;
-SELECT * FROM cuentas;
-```
-
-### Actualizar Información del Cliente
-Modifica los datos de un cliente específico.
-```sql
-UPDATE clientes
-SET nombre = :nuevo_nombre, apellido = :nuevo_apellido, telefono = :nuevo_telefono
-WHERE id = :id_cliente;
-```
-![](./imgs/q2.png)
-### Consultar Saldo
-Muestra el saldo de una cuenta específica.
-```sql
-SELECT SALDO FROM cuentas WHERE id = :id_cuenta;
-```
-![](./imgs/q3.png)
-### Obtener Información del Cliente
-Consulta datos personales del cliente y su tipo de cuenta.
-```sql
-SELECT
-    c.nombre,
-    c.apellido,
-    c.telefono,
-    t.tipo AS nombre_tipo_cuenta
-FROM
-    clientes c
-JOIN
-    cuentas cu ON c.id = cu.id_cliente
-JOIN
-    tipo_de_cuentas t ON cu.id_tipo_de_cuenta = t.id
-WHERE
-    c.id = :cliente_id;
-```
-![](./imgs/q4.png)
----
-
-## 2. Transacciones
-### Registrar Depósito
-Inserta un depósito en una cuenta a través del procedimiento `manejar_deposito`.
-```sql
-BEGIN
-    manejar_deposito(
-        p_numero_cuenta => :numero_cuenta,
-        p_monto => :monto,
-        p_id_sucursal_agencia => :id_sucursal_agencia
-    );
-END;
-/
-```
-![](./imgs/q5.png)
-
-### Registrar Retiro
-Llama al procedimiento `registrar_retiro` para disminuir saldo en una cuenta.
-```sql
-BEGIN
-    registrar_retiro(
-        p_numero_cuenta => :numero_cuenta,
-        p_monto => :monto,
-        p_id_sucursal_agencia => :id_sucursal_agencia
-    );
-END;
-/
-```
-
-### Transferencias entre Cuentas
-Ejecuta una transferencia interna entre cuentas.
-```sql
-BEGIN
-    manejar_transferencia(
-        p_numero_cuenta_origen => :numero_cuenta_origen,
-        p_numero_cuenta_destino => :numero_cuenta_destino,
-        p_monto => :monto,
-        p_id_sucursal_agencia => :id_sucursal_agencia
-    );
-END;
-/
-```
-
-### Transferencias Interbancarias
-Procesa transferencias entre bancos distintos usando `manejar_transferencia_inter`.
-```sql
-BEGIN
-    manejar_transferencia_inter(
-        p_id_sucursal_origen => :id_sucursal_origen,
-        p_id_sucursal_destino => :id_sucursal_destino,
-        p_numero_cuenta_origen => :numero_cuenta_origen,
-        p_numero_cuenta_destino => :numero_cuenta_destino,
-        p_monto => :monto
-    );
-END;
-/
-```
-
-### Consultar Historial de Transacciones
-Muestra el historial de transacciones de un cliente.
-```sql
-SELECT
-    t.id,
-    t.id_cliente,
-    t.numero_de_cuenta_origen,
-    t.numero_de_cuenta_destino,
-    tt.tipo AS tipo_transaccion,
-    t.monto,
-    t.fecha,
-    t.descripcion
-FROM
-    transacciones t
-JOIN
-    tipos_de_transacciones tt ON t.id_tipo_transaccion = tt.id
-JOIN
-    cuentas cu ON cu.NUMERO_DE_CUENTA = :numero_cuenta
-WHERE
-    t.id_cliente = :id_cliente;
-```
-![](./imgs/q7.png)
+![consulta1.png](img/consulta1.png)
 
 ---
 
-## 3. Préstamos
-### Solicitar Préstamo
-Inserta un nuevo préstamo asociado a un cliente, estableciendo su monto y tasa de interés.
-```sql
-INSERT INTO prestamos (id_prestamo, id_cliente, monto_del_prestamo, tasa_de_interes, fecha_de_desembolso, fecha_de_vencimiento, saldo_pendiente, id_estado)
-VALUES (seq_prestamos.NEXTVAL, :id_cliente, :monto_del_prestamo, :tasa_de_interes, SYSDATE, :fecha_de_vencimiento, :saldo_pendiente, 5);
-```
+# Consulta # 2:
 
-![](./imgs/q8.png)
+## ¿Cuánto dinero debe enviarse a cada sucursal o agencia?
 
-### Actualizar Estado de Préstamo
-Modifica el estado de un préstamo específico.
-```sql
-UPDATE prestamos
-SET id_estado = :nuevo_estado
-WHERE id_prestamo = :id_prestamo;
-```
+### Explicación de la consulta
 
-### Registrar Pago de Préstamo
-Llama al procedimiento `registrar_pago_prestamo` para realizar un abono en el préstamo.
-```sql
-BEGIN
-    registrar_pago_prestamo(
-        p_id_prestamo => :id_prestamo,
-        p_monto_pago => :monto_pago,
-        p_id_sucursal_agencia => :id_sucursal_agencia
-    );
-END;
-/
-```
+1. **TransaccionesDiarias:**
+    - Se crea una CTE llamada `TransaccionesDiarias` que calcula el total de transacciones monetarias (`TotalTransacciones`) realizadas en cada sucursal/agencia (`ID_SUCURSAL_AGENCIA`), tomando en cuenta todas las fechas.
 
-### Consultar Préstamos Activos de un Cliente
-Muestra los préstamos activos de un cliente.
-```sql
-SELECT *
-FROM prestamos
-WHERE id_cliente = :id_cliente AND id_estado = (SELECT id FROM estados_de_prestamos WHERE estado = 'Aprobado');
-```
-![](./imgs/q9.png)
+    ```sql
+    WITH TransaccionesDiarias AS (
+        SELECT ID_SUCURSAL_AGENCIA, SUM(MONTO) AS TotalTransacciones
+        FROM TRANSACCIONES
+        GROUP BY ID_SUCURSAL_AGENCIA
+    )
+    ```
 
----
+2. **DemandaLocal:**
+    - Se crea otra CTE llamada `DemandaLocal` que calcula el número de transacciones (`NumeroTransacciones`) realizadas en cada sucursal/agencia, tomando en cuenta todas las fechas.
 
-## 4. Tarjetas
-### Emitir Tarjeta
-Crea una tarjeta de crédito asociada a un cliente con límite y saldo inicial.
-```sql
-INSERT INTO tarjetas_de_credito (id_cliente, numero_de_tarjeta, limite_de_credito, saldo_actual, fecha_de_emision, fecha_de_expiracion, id_estado, fecha_de_corte, dia_del_ciclo)
-VALUES (:id_cliente, :numero_tarjeta, :limite_de_credito, :saldo_actual, SYSDATE, :fecha_de_expiracion, :id_estado, :fecha_de_corte, :dia_del_ciclo);
-```
+    ```sql
+    DemandaLocal AS (
+        SELECT ID_SUCURSAL_AGENCIA, COUNT(*) AS NumeroTransacciones
+        FROM TRANSACCIONES
+        GROUP BY ID_SUCURSAL_AGENCIA
+    )
+    ```
 
-### Registrar Pagos y Compras
-Utiliza el procedimiento `pagar_tarjeta_credito` para pagos o compras.
-```sql
-BEGIN
-    pagar_tarjeta_credito(
-        p_id_cliente => :id_cliente,
-        p_numero_tarjeta => :numero_tarjeta,
-        p_monto_pago => :monto_pago,
-        p_tipo_transaccion => :tipo_transaccion,
-        p_id_sucursal_agencia => :id_sucursal_agencia
-    );
-END;
-/
-```
+3. **Determinación del efectivo a enviar:**
+    - Finalmente, se unen las CTE `TransaccionesDiarias` y `DemandaLocal` para calcular cuánto efectivo debe enviarse a cada sucursal/agencia (`EfectivoAEnviar`).
+    - Además, se une la tabla `SUCURSALES_AGENCIAS` para obtener el nombre de la sucursal o agencia (`SA.NOMBRE`).
 
-### Consultar Estado de Cuenta
-Muestra detalles de la tarjeta, como saldo y límite.
-```sql
-SELECT numero_de_tarjeta, saldo_actual, limite_de_credito, fecha_de_corte
-FROM tarjetas_de_credito
-WHERE id_cliente = :id_cliente;
-```
+    ```sql
+    SELECT T.ID_SUCURSAL_AGENCIA, SA.NOMBRE,
+           (T.TotalTransacciones + D.NumeroTransacciones * 100) AS EfectivoAEnviar
+    FROM TransaccionesDiarias T
+    JOIN DemandaLocal D ON T.ID_SUCURSAL_AGENCIA = D.ID_SUCURSAL_AGENCIA
+    JOIN SUCURSALES_AGENCIAS SA ON T.ID_SUCURSAL_AGENCIA = SA.ID;
+    ```
+
+### Resultados
+El resultado de esta consulta será el ID y el nombre de cada sucursal o agencia junto con la cantidad de efectivo que debe enviarse a cada una.
+
+![consulta2.png](img/consulta2.png)
 
 ---
 
-## 5. Empleados
-### Registrar Empleado
-Agrega un empleado a la base de datos, asociándolo a una sucursal.
-```sql
-INSERT INTO empleados (id, nombre, apellido, id_rol, id_departamento, ID_SUCURSAL, telefono)
-VALUES (seq_empleados.nextval, :nombre, :apellido, :id_rol, :id_departamento, :sucursal, :telefono);
-```
+# Consulta # 3:
 
-### Actualizar Información del Empleado
-Modifica los datos de contacto de un empleado.
-```sql
-UPDATE empleados
-SET nombre = :nuevo_nombre, apellido = :nuevo_apellido, telefono = :nuevo_telefono
-WHERE id = :id_empleado;
-```
+## ¿Cuánto dinero debe almacenarse en la bóveda central?
 
-### Consultar Empleados por Sucursal
-Muestra los empleados de una sucursal específica.
-```sql
-SELECT * FROM empleados WHERE id_sucursal = (SELECT id FROM sucursales_agencias WHERE nombre = :nombre_sucursal);
-```
+### Explicación de la consulta
 
+1. **TotalDepositos:**
+    - Se crea una CTE llamada `TotalDepositos` que calcula la suma de los saldos (`SALDO`) de todas las cuentas en la tabla `CUENTAS`.
+
+    ```sql
+    WITH TotalDepositos AS (
+        SELECT SUM(SALDO) AS TotalDepositos
+        FROM CUENTAS
+    )
+    ```
+
+2. **RegulacionesSIB:**
+    - Se crea otra CTE llamada `RegulacionesSIB` que define el porcentaje mínimo de liquidez requerido por la SIB. En este ejemplo, el porcentaje mínimo es del 10% (0.1).
+
+    ```sql
+    RegulacionesSIB AS (
+        SELECT 0.1 AS PorcentajeMinimo -- Ejemplo: 10% de liquidez mínima requerida
+        FROM DUAL
+    )
+    ```
+
+3. **Cálculo del dinero en la bóveda central:**
+    - Finalmente, se multiplica el total de depósitos (`TotalDepositos`) por el porcentaje mínimo de liquidez (`PorcentajeMinimo`) para determinar cuánto dinero debe mantenerse en la bóveda central (`DineroEnBovedaCentral`).
+
+    ```sql
+    SELECT TotalDepositos * PorcentajeMinimo AS DineroEnBovedaCentral
+    FROM TotalDepositos, RegulacionesSIB;
+    ```
+
+### Resultados
+El resultado de esta consulta será el monto de dinero que debe permanecer en la bóveda central del banco para cumplir con las regulaciones de la SIB sobre el porcentaje mínimo de liquidez.
+
+![consulta3.png](img/consulta3.png)
 ---
-
-## 6. Sucursales
-### Registrar Sucursal
-Inserta una nueva sucursal o agencia.
-```sql
-INSERT INTO SUCURSALES_AGENCIAS (id, nombre, id_tipo, telefono, id_ubicacion)
-VALUES (seq_sucursales_agencias.nextval, :nombre, :id_tipo, :telefono, :id_ubicacion);
-```
-
-### Consultar Sucursales por Departamento
-Obtiene las sucursales de un departamento específico.
-```sql
-SELECT id, nombre, telefono
-FROM sucursales_agencias
-WHERE id_ubicacion IN (SELECT id FROM ubicaciones WHERE id_departamento = :id_departamento);
-```
-![](./imgs/q10.png)
-
----
-
-### Consultar Préstamos Aprobados
-Lista todos los préstamos con el estado 'Aprobado'.
-```sql
-SELECT *
-FROM prestamos
-WHERE id_estado = (SELECT id FROM estados_de_prestamos WHERE estado = 'Aprobado');
-```
-![](./imgs/q14.png)
