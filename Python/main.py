@@ -1,4 +1,6 @@
 import cx_Oracle
+import random
+from datetime import datetime, timedelta
 
 dsn_tns = cx_Oracle.makedsn('localhost', '1521', service_name='xe')
 connection = cx_Oracle.connect(user='C##Jeff', password='root', dsn=dsn_tns)
@@ -158,6 +160,170 @@ Tipos_Transacciones = [
     "Pago"
 ]
 
+tipos_de_estados_financieros = [
+    ["Solvente", "La empresa tiene suficiente capacidad para cubrir sus deudas y generar ganancias."],
+    ["Equilibrio", "La empresa mantiene un balance entre sus activos y pasivos."],
+    ["Quiebra", "La empresa no puede cubrir sus deudas y se encuentra en un estado financiero crítico."]
+]
+
+num_records = 340
+ubicaciones_data = [
+    {
+        "id": i + 1,
+        "id_departamento": random.randint(1, 22),
+        "id_municipio": random.randint(1, 326),
+        "id_codigo_postal": random.choice([c[0] for c in codigos_postales])
+    }
+    for i in range(num_records)
+]
+
+num_sucursales = 550
+num_agencias = 1500
+
+sucursales_agencias_data = []
+
+for i in range(1, num_sucursales + 1):
+    sucursales_agencias_data.append({
+        "id": i,
+        "nombre": f"Sucursal{i}",
+        "id_tipo": 1,
+        "telefono": f"{random.randint(100, 999)}-{random.randint(1000, 9999)}",
+        "id_ubicacion": random.randint(1, 340)
+    })
+
+for j in range(1, num_agencias + 1):
+    sucursales_agencias_data.append({
+        "id": num_sucursales + j,
+        "nombre": f"Agencia{j}",
+        "id_tipo": 2,
+        "telefono": f"{random.randint(100, 999)}-{random.randint(1000, 9999)}",
+        "id_ubicacion": random.randint(1, 340)
+    })
+
+num_clientes = 500000
+def generar_telefono():
+    return f"(502) {random.randint(1000, 9999)}-{random.randint(1000, 9999)}"
+
+clientes_data = []
+for i in range(1, num_clientes + 1):
+    clientes_data.append({
+        "id": i,
+        "nombre": f"Cliente{i}",
+        "apellido": f"Apellido{i}",
+        "telefono": generar_telefono(),
+    })
+
+num_cuentas = 500000
+def generar_numero_cuenta():
+    return f"{random.randint(100000, 999999)}-{random.randint(100000, 999999)}"
+
+cuentas_data = []
+numeros_de_cuenta = set()
+
+for i in range(1, num_cuentas + 1):
+    numero_de_cuenta = generar_numero_cuenta()
+    while numero_de_cuenta in numeros_de_cuenta:
+        numero_de_cuenta = generar_numero_cuenta()
+    numeros_de_cuenta.add(numero_de_cuenta)
+
+    cuentas_data.append({
+        "id": i,
+        "numero_de_cuenta": numero_de_cuenta,
+        "id_tipo_de_cuenta": random.randint(1, 2),
+        "saldo": round(random.uniform(100, 10000), 2),
+        "id_cliente": i
+    })
+
+num_bovedas = 2050
+bovedas_data = []
+
+for i in range(1, num_bovedas + 1):
+    bovedas_data.append({
+        "id_agencia_sucursal": i,
+        "fondos_disponibles": round(random.uniform(1000000.00, 10000000.00), 2)
+    })
+    
+num_tarjetas = 500000
+def random_date(start, end):
+    return start + timedelta(days=random.randint(0, (end - start).days))
+
+# Generar datos para las tarjetas de crédito
+tarjetas_data = []
+
+for i in range(1, num_tarjetas + 1):
+    fecha_emision = random_date(datetime(2020, 1, 1), datetime(2024, 12, 31))
+    fecha_expiracion = fecha_emision + timedelta(days=730)  # 2 años de validez
+    fecha_de_corte = random_date(fecha_emision, fecha_emision + timedelta(days=30))  # Dentro del mes
+    limite_de_credito = round(random.uniform(1000.00, 50000.00), 2)
+    saldo_actual = round(random.uniform(0.00, limite_de_credito), 2)
+    
+    tarjetas_data.append({
+        "id_tarjeta": i,
+        "id_cliente": i,  # Mapeo directo de 1 a 500000
+        "numero_de_tarjeta": f"{random.randint(4000000000000000, 4999999999999999)}",  # Generar un número de tarjeta
+        "limite_de_credito": limite_de_credito,
+        "saldo_actual": saldo_actual,
+        "fecha_de_emision": fecha_emision.strftime('%Y-%m-%d'),
+        "fecha_de_expiracion": fecha_expiracion.strftime('%Y-%m-%d'),
+        "id_estado": random.randint(1, 3),
+        "fecha_de_corte": fecha_de_corte.strftime('%Y-%m-%d'),
+        "dia_del_ciclo": random.randint(1, 30)
+    })
+
+num_prestamos = 100000
+
+def random_date(start, end):
+    return start + timedelta(days=random.randint(0, (end - start).days))
+
+prestamos_data = []
+
+for i in range(1, num_prestamos + 1):
+    monto_del_prestamo = round(random.uniform(5000.00, 1000000.00), 2)
+    tasa_de_interes = round(random.uniform(3.00, 15.00), 2)
+    fecha_desembolso = random_date(datetime(2020, 1, 1), datetime(2024, 12, 31))
+    fecha_vencimiento = fecha_desembolso + timedelta(days=730)  # 2 años de vencimiento
+    saldo_pendiente = monto_del_prestamo  # Saldo inicial es el mismo monto del préstamo
+    
+    prestamos_data.append({
+        "id_prestamo": i,
+        "id_cliente": random.randint(1, 500000),
+        "monto_del_prestamo": monto_del_prestamo,
+        "tasa_de_interes": tasa_de_interes,
+        "fecha_de_desembolso": fecha_desembolso.strftime('%Y-%m-%d'),
+        "fecha_de_vencimiento": fecha_vencimiento.strftime('%Y-%m-%d'),
+        "saldo_pendiente": saldo_pendiente,
+        "id_estado": random.randint(1, 3)
+    })
+
+num_transacciones = 250000
+transacciones_data = []
+
+for i in range(1, num_transacciones + 1):
+    id_cliente = random.randint(1, 500000)  # Cliente aleatorio
+    cuenta_origen = random.randint(1, 500000)  # Cuenta origen aleatoria
+    cuenta_destino = cuenta_origen  # Inicializar cuenta destino igual a cuenta origen
+    
+    # Asegurar que la cuenta destino sea diferente de la cuenta origen
+    while cuenta_destino == cuenta_origen:
+        cuenta_destino = random.randint(1, 500000)
+
+    id_tipo_transaccion = random.randint(1, 5)  # Suponiendo 5 tipos de transacción
+    monto = round(random.uniform(10.00, 5000.00), 2)  # Monto entre 10 y 5000
+    fecha = datetime.now() - timedelta(days=random.randint(0, 365))  # Fecha aleatoria en el último año
+    descripcion = f"Transacción #{i}"  # Descripción genérica
+    id_sucursal_agencia = random.randint(1, 2050)  # Sucursal o agencia aleatoria
+
+    transacciones_data.append({
+        "id": i,
+        "id_cliente": id_cliente,
+        "numero_de_cuenta_origen": cuenta_origen,
+        "numero_de_cuenta_destino": cuenta_destino,
+        "id_tipo_transaccion": id_tipo_transaccion,
+        "monto": monto,
+        "fecha": fecha.strftime('%Y-%m-%d %H:%M:%S'),
+        "descripcion": descripcion,
+        "id_sucursal_agencia": id_sucursal_agencia
+    })
 
 try:
     cursor = connection.cursor()
@@ -192,6 +358,33 @@ try:
 
     for tipo_transaccion in Tipos_Transacciones:
         cursor.execute("INSERT INTO tipos_de_transacciones (ID, TIPO) VALUES (seq_tipos_de_transacciones.NEXTVAL, :1)", (tipo_transaccion,))
+
+    for tipos_estado in tipos_de_estados_financieros:
+        cursor.execute("INSERT INTO tipos_de_estados_financieros (ID, TIPO, DESCRIPCION) VALUES (seq_tipos_de_estados_financieros.NEXTVAL, :1, :2)", (tipos_estado[0], tipos_estado[1]))
+
+    for ubicacion in ubicaciones_data:
+        cursor.execute("INSERT INTO ubicaciones (ID, ID_DEPARTAMENTO, ID_MUNICIPIO, ID_CODIGO_POSTAL) VALUES (seq_ubicaciones.NEXTVAL, :1, :2, :3)", (ubicacion["id_departamento"], ubicacion["id_municipio"], ubicacion["id_codigo_postal"]))
+
+    for suc_agencia in sucursales_agencias_data:
+        cursor.execute("INSERT INTO sucursales_agencias (ID, NOMBRE, ID_TIPO, TELEFONO, ID_UBICACION) VALUES (seq_sucursales_agencias.NEXTVAL, :1, :2, :3, :4)", (suc_agencia["nombre"], suc_agencia["id_tipo"], suc_agencia["telefono"], suc_agencia["id_ubicacion"]))
+
+    for cliente in clientes_data:
+        cursor.execute("INSERT INTO clientes (ID, NOMBRE, APELLIDO, TELEFONO) VALUES (seq_clientes.NEXTVAL, :1, :2, :3)", (cliente["nombre"], cliente["apellido"], cliente["telefono"]))
+
+    for cuenta in cuentas_data:
+        cursor.execute("INSERT INTO cuentas (ID, NUMERO_DE_CUENTA, ID_TIPO_DE_CUENTA, SALDO, ID_CLIENTE) VALUES (seq_cuentas.NEXTVAL, :1, :2, :3, :4)", (cuenta["numero_de_cuenta"], cuenta["id_tipo_de_cuenta"], cuenta["saldo"], cuenta["id_cliente"]))
+
+    for boveda in bovedas_data:
+        cursor.execute("INSERT INTO bovedas (ID_BOVEDA, ID_AGENCIA_SUCURSAL, FONDOS_DISPONIBLES) VALUES (seq_bovedas.NEXTVAL, :1, :2)", (boveda["id_agencia_sucursal"], boveda["fondos_disponibles"]))
+
+    for tarjeta in tarjetas_data:
+        cursor.execute("INSERT INTO tarjetas_de_credito (ID_TARJETA, ID_CLIENTE, NUMERO_DE_TARJETA, LIMITE_DE_CREDITO, SALDO_ACTUAL, FECHA_DE_EMISION, FECHA_DE_EXPIRACION, ID_ESTADO, FECHA_DE_CORTE, DIA_DEL_CICLO) VALUES (seq_tarjetas_de_credito.NEXTVAL, :1, :2, :3, :4, TO_DATE(:5, 'YYYY-MM-DD'), TO_DATE(:6, 'YYYY-MM-DD'), :7, TO_DATE(:8, 'YYYY-MM-DD'), :9)", (tarjeta["id_cliente"], tarjeta["numero_de_tarjeta"], tarjeta["limite_de_credito"], tarjeta["saldo_actual"], tarjeta["fecha_de_emision"], tarjeta["fecha_de_expiracion"], tarjeta["id_estado"], tarjeta["fecha_de_corte"], tarjeta["dia_del_ciclo"]))
+
+    for prestamo in prestamos_data:
+        cursor.execute("INSERT INTO prestamos (ID_PRESTAMO, ID_CLIENTE, MONTO_DEL_PRESTAMO, TASA_DE_INTERES, FECHA_DE_DESEMBOLSO, FECHA_DE_VENCIMIENTO, SALDO_PENDIENTE, ID_ESTADO) VALUES (seq_prestamos.NEXTVAL, :1, :2, :3, TO_DATE(:4, 'YYYY-MM-DD'), TO_DATE(:5, 'YYYY-MM-DD'), :6, :7)", (prestamo["id_cliente"], prestamo["monto_del_prestamo"], prestamo["tasa_de_interes"], prestamo["fecha_de_desembolso"], prestamo["fecha_de_vencimiento"], prestamo["saldo_pendiente"], prestamo["id_estado"]))
+
+    for transaccion in transacciones_data:
+        cursor.execute("INSERT INTO transacciones (ID, ID_CLIENTE, NUMERO_DE_CUENTA_ORIGEN, NUMERO_DE_CUENTA _DESTINO, ID_TIPO_TRANSACCION, MONTO, FECHA, DESCRIPCION, ID_SUCURSAL_AGENCIA) VALUES (seq_transacciones.NEXTVAL, :1, :2, :3, :4, :5, TO_DATE(:6, 'YYYY-MM-DD HH24:MIS'), :7, :8)", (transaccion["id_cliente"], transaccion["numero_de_cuenta_origen"], transaccion["numero_de_cuenta_destino"], transaccion["id_tipo_transaccion"], transaccion["monto"], transaccion["fecha"], transaccion["descripcion"], transaccion["id_sucursal_agencia"]))
 
     connection.commit()
     print("Datos insertados exitosamente en la base de datos.")
