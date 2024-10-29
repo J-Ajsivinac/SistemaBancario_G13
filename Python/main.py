@@ -119,47 +119,13 @@ codigos_postales = [
     [39001, "San Martín Jilotepeque, Chimaltenango"]
 ]
 
-roles = [
-    "Gerente",
-    "Cajero",
-    "Asesor Financiero"
-]
-
-tipos_sucursales_agencias = [
-    "Sucursal",
-    "Agencia"
-]
-
-tipo_cuentas = [
-    "Ahorro",
-    "Monetario"
-]
-
-estados_tarjetas = [
-    "Activo",
-    "Bloqueado",
-    "Cancelado"
-]
-
-estados_prestamos = [
-    "Activo",
-    "Vencido",
-    "Cancelado"
-]
-
-Tipos_Sueldo = [
-    "Mensual",
-    "Quincenal",
-    "Semanal"
-]
-
-Tipos_Transacciones = [
-    "Depósito",
-    "Retiro",
-    "Transferencia",
-    "Pago"
-]
-
+roles = ["Gerente", "Cajero", "Asesor Financiero"]
+tipos_sucursales_agencias = ["Sucursal", "Agencia"]
+tipo_cuentas = ["Ahorro", "Monetario"]
+estados_tarjetas = ["Activo", "Bloqueado", "Cancelado"]
+estados_prestamos = ["Activo", "Vencido", "Cancelado"]
+Tipos_Sueldo = ["Mensual", "Quincenal", "Semanal"]
+Tipos_Transacciones = ["Depósito", "Retiro", "Transferencia", "Pago"]
 tipos_de_estados_financieros = [
     ["Solvente", "La empresa tiene suficiente capacidad para cubrir sus deudas y generar ganancias."],
     ["Equilibrio", "La empresa mantiene un balance entre sus activos y pasivos."],
@@ -180,25 +146,18 @@ ubicaciones_data = [
 num_sucursales = 550
 num_agencias = 1500
 
-sucursales_agencias_data = []
-
-for i in range(1, num_sucursales + 1):
-    sucursales_agencias_data.append({
+sucursales_agencias_data = [
+    {
         "id": i,
-        "nombre": f"Sucursal{i}",
-        "id_tipo": 1,
+        "nombre": f"Sucursal{i}" if i <= num_sucursales else f"Agencia{i - num_sucursales}",
+        "id_tipo": 1 if i <= num_sucursales else 2,
         "telefono": f"{random.randint(100, 999)}-{random.randint(1000, 9999)}",
         "id_ubicacion": random.randint(1, 340)
-    })
+    }
+    for i in range(1, num_sucursales + num_agencias + 1)
+]
 
-for j in range(1, num_agencias + 1):
-    sucursales_agencias_data.append({
-        "id": num_sucursales + j,
-        "nombre": f"Agencia{j}",
-        "id_tipo": 2,
-        "telefono": f"{random.randint(100, 999)}-{random.randint(1000, 9999)}",
-        "id_ubicacion": random.randint(1, 340)
-    })
+# ========================================
 
 num_clientes = 500000
 def generar_telefono():
@@ -233,6 +192,18 @@ for i in range(1, num_cuentas + 1):
         "saldo": round(random.uniform(100, 10000), 2),
         "id_cliente": i
     })
+
+num_empleados = 5500
+empleados_data = [
+    {
+        "nombre": f"Empleado{i + 1}",
+        "apellido": f"Apellido{i + 1}",
+        "id_rol": random.randint(1, 3),
+        "id_departamento": random.randint(1, 22),
+        "id_sucursal": random.randint(1, 2050)
+    }
+    for i in range(num_empleados)
+]
 
 num_bovedas = 2050
 bovedas_data = []
@@ -305,7 +276,7 @@ for i in range(1, num_transacciones + 1):
     while cuenta_destino == cuenta_origen:
         cuenta_destino = random.randint(1, 500000)
 
-    id_tipo_transaccion = random.randint(1, 5)
+    id_tipo_transaccion = random.randint(1, 4)
     monto = round(random.uniform(10.00, 5000.00), 2)
     fecha = datetime.now() - timedelta(days=random.randint(0, 365))
     descripcion = f"Transacción #{i}" 
@@ -323,66 +294,200 @@ for i in range(1, num_transacciones + 1):
         "id_sucursal_agencia": id_sucursal_agencia
     })
 
+num_transacciones_interbancarias = 100000
+transacciones_interbancarias_data = []
+
+for i in range(1, num_transacciones_interbancarias + 1):
+    id_sucursal_agencia_origen = random.randint(1, 2050)
+    id_sucursal_agencia_destino = id_sucursal_agencia_origen
+
+    while id_sucursal_agencia_destino == id_sucursal_agencia_origen:
+        id_sucursal_agencia_destino = random.randint(1, 2050)
+
+    monto = round(random.uniform(1000.00, 1000000.00), 2)
+    fecha = datetime.now() - timedelta(days=random.randint(0, 365))
+    descripcion = f"Transacción Interbancaria #{i}"
+
+    transacciones_interbancarias_data.append({
+        "id": i,
+        "id_sucursal_agencia_origen": id_sucursal_agencia_origen,
+        "id_sucursal_agencia_destino": id_sucursal_agencia_destino,
+        "monto": monto,
+        "fecha": fecha.strftime('%Y-%m-%d %H:%M:%S'),
+        "descripcion": descripcion
+    })
+
+num_registros = 2050
+def elegir_tipo_estado():
+    return random.choices([1, 2, 3], weights=[45, 45, 10], k=1)[0]
+
+estados_financieros_data = []
+
+for i in range(1, num_registros + 1):
+    id_sucursal_agencia = i
+    monto_activo = round(random.uniform(50000.00, 5000000.00), 2)
+    monto_pasivo = round(random.uniform(10000.00, 2000000.00), 2)
+    saldo_total = round(monto_activo - monto_pasivo, 2)
+    fecha = datetime.now() - timedelta(days=random.randint(0, 365))
+    id_tipo_estado = elegir_tipo_estado()
+
+    estados_financieros_data.append({
+        "id": i,
+        "id_sucursal_agencia": id_sucursal_agencia,
+        "monto_activo": monto_activo,
+        "monto_pasivo": monto_pasivo,
+        "saldo_total": saldo_total,
+        "fecha": fecha.strftime('%Y-%m-%d'),
+        "id_tipo_estado": id_tipo_estado
+    })
+
+num_sueldos = 1000
+sueldos_data = []
+
+for i in range(1, num_sueldos + 1):
+    id_empleado = i
+    sueldo = round(random.uniform(3000.00, 50000.00), 2)
+    fecha_inicio = datetime.now() - timedelta(days=random.randint(30, 1000))
+    fecha_fin = fecha_inicio + timedelta(days=random.randint(30, 730)) if random.random() > 0.3 else None
+    id_tipo_sueldo = random.randint(1, 3)
+    bonos = round(random.uniform(0.00, 10000.00), 2) if random.random() > 0.5 else 0.00
+    deducciones = round(random.uniform(0.00, 5000.00), 2) if random.random() > 0.3 else 0.00
+    notas = "Notas adicionales" if random.random() > 0.7 else ""
+
+    sueldos_data.append({
+        "id": i,
+        "id_empleado": id_empleado,
+        "sueldo": sueldo,
+        "fecha_inicio": fecha_inicio.strftime('%Y-%m-%d'),
+        "fecha_fin": fecha_fin.strftime('%Y-%m-%d') if fecha_fin else None,
+        "id_tipo_sueldo": id_tipo_sueldo,
+        "bonos": bonos,
+        "deducciones": deducciones,
+        "notas": notas
+    })
+
 try:
     cursor = connection.cursor()
+    
+    cursor.executemany(
+        "INSERT INTO departamentos (ID, DEPARTAMENTO) VALUES (seq_departamentos.NEXTVAL, :1)", 
+        [(dep,) for dep in departamentos]
+    )
 
-    for departamento in departamentos:
-        cursor.execute("INSERT INTO departamentos (ID, DEPARTAMENTO) VALUES (seq_departamentos.NEXTVAL, :1)", (departamento,))
+    municipios_data = [
+        (id_departamento, municipio) 
+        for id_departamento, _, municipios in deptos_municipios 
+        for municipio in municipios
+    ]
+    cursor.executemany(
+        "INSERT INTO municipios (ID, ID_DEPARTAMENTO, MUNICIPIO) VALUES (seq_municipios.NEXTVAL, :1, :2)",
+        municipios_data
+    )
 
-    for id_departamento, _, municipios in deptos_municipios:
-        for municipio in municipios:
-            cursor.execute("INSERT INTO municipios (ID, ID_DEPARTAMENTO, MUNICIPIO) VALUES (seq_municipios.NEXTVAL, :1, :2)", (id_departamento, municipio))
+    cursor.executemany(
+        "INSERT INTO codigos_postales (CODIGO, DIRECCION) VALUES (:1, :2)", 
+        codigos_postales
+    )
 
-    for direccion in codigos_postales:
-        cursor.execute("INSERT INTO codigos_postales (CODIGO, DIRECCION) VALUES (:1, :2)", (direccion[0], direccion[1]))
+    cursor.executemany(
+        "INSERT INTO roles (ID, ROL) VALUES (seq_roles.NEXTVAL, :1)", 
+        [(rol,) for rol in roles]
+    )
 
-    for rol in roles:
-        cursor.execute("INSERT INTO roles (ID, ROL) VALUES (seq_roles.NEXTVAL, :1)", (rol,))
+    cursor.executemany(
+        "INSERT INTO tipo_de_sucursales_agencias (ID, NOMBRE_TIPO) VALUES (seq_tipo_de_sucursales.NEXTVAL, :1)", 
+        [(tipo,) for tipo in tipos_sucursales_agencias]
+    )
 
-    for agencia in tipos_sucursales_agencias:
-        cursor.execute("INSERT INTO tipo_de_sucursales_agencias (ID, NOMBRE_TIPO) VALUES (seq_tipo_de_sucursales.NEXTVAL, :1)", (agencia,))
+    cursor.executemany(
+        "INSERT INTO tipo_de_cuentas (ID, TIPO) VALUES (seq_tipo_de_cuentas.NEXTVAL, :1)", 
+        [(tipo,) for tipo in tipo_cuentas]
+    )
 
-    for tipo_cuenta in tipo_cuentas:
-        cursor.execute("INSERT INTO tipo_de_cuentas (ID, TIPO) VALUES (seq_tipo_de_cuentas.NEXTVAL, :1)", (tipo_cuenta,))
+    cursor.executemany(
+        "INSERT INTO estados_de_tarjetas (ID, ESTADO) VALUES (seq_estados_de_tarjetas.NEXTVAL, :1)", 
+        [(estado,) for estado in estados_tarjetas]
+    )
 
-    for estado_tarjeta in estados_tarjetas:
-        cursor.execute("INSERT INTO estados_de_tarjetas (ID, ESTADO) VALUES (seq_estados_de_tarjetas.NEXTVAL, :1)", (estado_tarjeta,))
+    cursor.executemany(
+        "INSERT INTO estados_de_prestamos (ID, ESTADO) VALUES (seq_estados_de_prestamos.NEXTVAL, :1)", 
+        [(estado,) for estado in estados_prestamos]
+    )
 
-    for estado_prestamo in estados_prestamos:
-        cursor.execute("INSERT INTO estados_de_prestamos (ID, ESTADO) VALUES (seq_estados_de_prestamos.NEXTVAL, :1)", (estado_prestamo,))
+    cursor.executemany(
+        "INSERT INTO tipos_de_sueldo (ID, TIPO) VALUES (seq_tipos_de_sueldo.NEXTVAL, :1)", 
+        [(tipo,) for tipo in Tipos_Sueldo]
+    )
 
-    for tipo_sueldo in Tipos_Sueldo:
-        cursor.execute("INSERT INTO tipos_de_sueldo (ID, TIPO) VALUES (seq_tipos_de_sueldo.NEXTVAL, :1)", (tipo_sueldo,))
+    cursor.executemany(
+        "INSERT INTO tipos_de_transacciones (ID, TIPO) VALUES (seq_tipos_de_transacciones.NEXTVAL, :1)", 
+        [(transaccion,) for transaccion in Tipos_Transacciones]
+    )
 
-    for tipo_transaccion in Tipos_Transacciones:
-        cursor.execute("INSERT INTO tipos_de_transacciones (ID, TIPO) VALUES (seq_tipos_de_transacciones.NEXTVAL, :1)", (tipo_transaccion,))
+    cursor.executemany(
+        "INSERT INTO tipos_de_estados_financieros (ID, TIPO, DESCRIPCION) VALUES (seq_tipos_de_estados_financieros.NEXTVAL, :1, :2)", 
+        tipos_de_estados_financieros
+    )
 
-    for tipos_estado in tipos_de_estados_financieros:
-        cursor.execute("INSERT INTO tipos_de_estados_financieros (ID, TIPO, DESCRIPCION) VALUES (seq_tipos_de_estados_financieros.NEXTVAL, :1, :2)", (tipos_estado[0], tipos_estado[1]))
+    cursor.executemany(
+        "INSERT INTO ubicaciones (ID, ID_DEPARTAMENTO, ID_MUNICIPIO, ID_CODIGO_POSTAL) VALUES (seq_ubicaciones.NEXTVAL, :1, :2, :3)", 
+        [(ub["id_departamento"], ub["id_municipio"], ub["id_codigo_postal"]) for ub in ubicaciones_data]
+    )
 
-    for ubicacion in ubicaciones_data:
-        cursor.execute("INSERT INTO ubicaciones (ID, ID_DEPARTAMENTO, ID_MUNICIPIO, ID_CODIGO_POSTAL) VALUES (seq_ubicaciones.NEXTVAL, :1, :2, :3)", (ubicacion["id_departamento"], ubicacion["id_municipio"], ubicacion["id_codigo_postal"]))
+    cursor.executemany(
+        "INSERT INTO sucursales_agencias (ID, NOMBRE, ID_TIPO, TELEFONO, ID_UBICACION) VALUES (seq_sucursales_agencias.NEXTVAL, :1, :2, :3, :4)", 
+        [(sa["nombre"], sa["id_tipo"], sa["telefono"], sa["id_ubicacion"]) for sa in sucursales_agencias_data]
+    )
 
-    for suc_agencia in sucursales_agencias_data:
-        cursor.execute("INSERT INTO sucursales_agencias (ID, NOMBRE, ID_TIPO, TELEFONO, ID_UBICACION) VALUES (seq_sucursales_agencias.NEXTVAL, :1, :2, :3, :4)", (suc_agencia["nombre"], suc_agencia["id_tipo"], suc_agencia["telefono"], suc_agencia["id_ubicacion"]))
+    cursor.executemany(
+        "INSERT INTO clientes (ID, NOMBRE, APELLIDO, TELEFONO) VALUES (seq_clientes.NEXTVAL, :1, :2, :3)", 
+        [(cliente["nombre"], cliente["apellido"], cliente["telefono"]) for cliente in clientes_data]
+    )
 
-    for cliente in clientes_data:
-        cursor.execute("INSERT INTO clientes (ID, NOMBRE, APELLIDO, TELEFONO) VALUES (seq_clientes.NEXTVAL, :1, :2, :3)", (cliente["nombre"], cliente["apellido"], cliente["telefono"]))
+    cursor.executemany(
+        "INSERT INTO cuentas (ID, NUMERO_DE_CUENTA, ID_TIPO_DE_CUENTA, SALDO, ID_CLIENTE) VALUES (seq_cuentas.NEXTVAL, :1, :2, :3, :4)", 
+        [(cuenta["numero_de_cuenta"], cuenta["id_tipo_de_cuenta"], cuenta["saldo"], cuenta["id_cliente"]) for cuenta in cuentas_data]
+    )
 
-    for cuenta in cuentas_data:
-        cursor.execute("INSERT INTO cuentas (ID, NUMERO_DE_CUENTA, ID_TIPO_DE_CUENTA, SALDO, ID_CLIENTE) VALUES (seq_cuentas.NEXTVAL, :1, :2, :3, :4)", (cuenta["numero_de_cuenta"], cuenta["id_tipo_de_cuenta"], cuenta["saldo"], cuenta["id_cliente"]))
+    cursor.executemany(
+        "INSERT INTO empleados (ID, NOMBRE, APELLIDO, ID_ROL, ID_DEPARTAMENTO, ID_SUCURSAL, TELEFONO) VALUES (seq_empleados.NEXTVAL, :1, :2, :3, :4, :5, :6)",
+        [(empleado["nombre"], empleado["apellido"], empleado["id_rol"], empleado["id_departamento"], empleado["id_sucursal"], generar_telefono()) for empleado in empleados_data]
+    )
 
-    for boveda in bovedas_data:
-        cursor.execute("INSERT INTO bovedas (ID_BOVEDA, ID_AGENCIA_SUCURSAL, FONDOS_DISPONIBLES) VALUES (seq_bovedas.NEXTVAL, :1, :2)", (boveda["id_agencia_sucursal"], boveda["fondos_disponibles"]))
+    cursor.executemany(
+        "INSERT INTO bovedas (ID_BOVEDA, ID_AGENCIA_SUCURSAL, FONDOS_DISPONIBLES) VALUES (seq_bovedas.NEXTVAL, :1, :2)", 
+        [(boveda["id_agencia_sucursal"], boveda["fondos_disponibles"]) for boveda in bovedas_data]
+    )
 
-    for tarjeta in tarjetas_data:
-        cursor.execute("INSERT INTO tarjetas_de_credito (ID_TARJETA, ID_CLIENTE, NUMERO_DE_TARJETA, LIMITE_DE_CREDITO, SALDO_ACTUAL, FECHA_DE_EMISION, FECHA_DE_EXPIRACION, ID_ESTADO, FECHA_DE_CORTE, DIA_DEL_CICLO) VALUES (seq_tarjetas_de_credito.NEXTVAL, :1, :2, :3, :4, TO_DATE(:5, 'YYYY-MM-DD'), TO_DATE(:6, 'YYYY-MM-DD'), :7, TO_DATE(:8, 'YYYY-MM-DD'), :9)", (tarjeta["id_cliente"], tarjeta["numero_de_tarjeta"], tarjeta["limite_de_credito"], tarjeta["saldo_actual"], tarjeta["fecha_de_emision"], tarjeta["fecha_de_expiracion"], tarjeta["id_estado"], tarjeta["fecha_de_corte"], tarjeta["dia_del_ciclo"]))
+    cursor.executemany(
+        "INSERT INTO tarjetas_de_credito (ID_TARJETA, ID_CLIENTE, NUMERO_DE_TARJETA, LIMITE_DE_CREDITO, SALDO_ACTUAL, FECHA_DE_EMISION, FECHA_DE_EXPIRACION, ID_ESTADO, FECHA_DE_CORTE, DIA_DEL_CICLO) VALUES (seq_tarjetas_de_credito.NEXTVAL, :1, :2, :3, :4, TO_DATE(:5, 'YYYY-MM-DD'), TO_DATE(:6, 'YYYY-MM-DD'), :7, TO_DATE(:8, 'YYYY-MM-DD'), :9)", 
+        [(tarjeta["id_cliente"], tarjeta["numero_de_tarjeta"], tarjeta["limite_de_credito"], tarjeta["saldo_actual"], tarjeta["fecha_de_emision"], tarjeta["fecha_de_expiracion"], tarjeta["id_estado"], tarjeta["fecha_de_corte"], tarjeta["dia_del_ciclo"]) for tarjeta in tarjetas_data]
+    )
 
-    for prestamo in prestamos_data:
-        cursor.execute("INSERT INTO prestamos (ID_PRESTAMO, ID_CLIENTE, MONTO_DEL_PRESTAMO, TASA_DE_INTERES, FECHA_DE_DESEMBOLSO, FECHA_DE_VENCIMIENTO, SALDO_PENDIENTE, ID_ESTADO) VALUES (seq_prestamos.NEXTVAL, :1, :2, :3, TO_DATE(:4, 'YYYY-MM-DD'), TO_DATE(:5, 'YYYY-MM-DD'), :6, :7)", (prestamo["id_cliente"], prestamo["monto_del_prestamo"], prestamo["tasa_de_interes"], prestamo["fecha_de_desembolso"], prestamo["fecha_de_vencimiento"], prestamo["saldo_pendiente"], prestamo["id_estado"]))
+    cursor.executemany(
+        "INSERT INTO prestamos (ID_PRESTAMO, ID_CLIENTE, MONTO_DEL_PRESTAMO, TASA_DE_INTERES, FECHA_DE_DESEMBOLSO, FECHA_DE_VENCIMIENTO, SALDO_PENDIENTE, ID_ESTADO) VALUES (seq_prestamos.NEXTVAL, :1, :2, :3, TO_DATE(:4, 'YYYY-MM-DD'), TO_DATE(:5, 'YYYY-MM-DD'), :6, :7)", 
+        [(prestamo["id_cliente"], prestamo["monto_del_prestamo"], prestamo["tasa_de_interes"], prestamo["fecha_de_desembolso"], prestamo["fecha_de_vencimiento"], prestamo["saldo_pendiente"], prestamo["id_estado"]) for prestamo in prestamos_data]
+    )
 
-    for transaccion in transacciones_data:
-        cursor.execute("INSERT INTO transacciones (ID, ID_CLIENTE, NUMERO_DE_CUENTA_ORIGEN, NUMERO_DE_CUENTA _DESTINO, ID_TIPO_TRANSACCION, MONTO, FECHA, DESCRIPCION, ID_SUCURSAL_AGENCIA) VALUES (seq_transacciones.NEXTVAL, :1, :2, :3, :4, :5, TO_DATE(:6, 'YYYY-MM-DD HH24:MIS'), :7, :8)", (transaccion["id_cliente"], transaccion["numero_de_cuenta_origen"], transaccion["numero_de_cuenta_destino"], transaccion["id_tipo_transaccion"], transaccion["monto"], transaccion["fecha"], transaccion["descripcion"], transaccion["id_sucursal_agencia"]))
+    cursor.executemany(
+        "INSERT INTO transacciones (ID, ID_CLIENTE, NUMERO_DE_CUENTA_ORIGEN, NUMERO_DE_CUENTA_DESTINO, ID_TIPO_TRANSACCION, MONTO, FECHA, DESCRIPCION, ID_SUCURSAL_AGENCIA) VALUES (seq_transacciones.NEXTVAL, :1, :2, :3, :4, :5, TO_DATE(:6, 'YYYY-MM-DD HH24:MI:SS'), :7, :8)", 
+        [(transaccion["id_cliente"], transaccion["numero_de_cuenta_origen"], transaccion["numero_de_cuenta_destino"], transaccion["id_tipo_transaccion"], transaccion["monto"], transaccion["fecha"], transaccion["descripcion"], transaccion["id_sucursal_agencia"]) for transaccion in transacciones_data]
+    )
+
+    cursor.executemany(
+        "INSERT INTO transacciones_interbancarias (ID, ID_SUCURSAL_AGENCIA_ORIGEN, ID_SUCURSAL_AGENCIA_DESTINO, MONTO, FECHA, DESCRIPCION) VALUES (seq_transacciones_interbancarias.NEXTVAL, :1, :2, :3, TO_DATE(:4, 'YYYY-MM-DD HH24:MI:SS'), :5)",
+        [(transaccion["id_sucursal_agencia_origen"], transaccion["id_sucursal_agencia_destino"], transaccion["monto"], transaccion["fecha"], transaccion["descripcion"]) for transaccion in transacciones_interbancarias_data]
+    )
+
+    cursor.executemany(
+        "INSERT INTO estados_financieros (ID, ID_SUCURSAL_AGENCIA, MONTO_ACTIVO, MONTO_PASIVO, SALDO_TOTAL, FECHA, ID_TIPO_ESTADO) VALUES (seq_estados_financieros.NEXTVAL, :1, :2, :3, :4, TO_DATE(:5, 'YYYY-MM-DD'), :6)",
+        [(estado["id_sucursal_agencia"], estado["monto_activo"], estado["monto_pasivo"], estado["saldo_total"], estado["fecha"], estado["id_tipo_estado"]) for estado in estados_financieros_data]
+    )
+
+    cursor.executemany(
+        "INSERT INTO sueldos (ID, ID_EMPLEADO, SUELDO, FECHA_INICIO, FECHA_FIN, ID_TIPO_SUELDO, BONOS, DEDUCCIONES, NOTAS) VALUES (seq_sueldos.NEXTVAL, :1, :2, TO_DATE(:3, 'YYYY-MM-DD'), TO_DATE(:4, 'YYYY-MM-DD'), :5, :6, :7, :8)",
+        [(sueldo["id_empleado"], sueldo["sueldo"], sueldo["fecha_inicio"], sueldo["fecha_fin"], sueldo["id_tipo_sueldo"], sueldo["bonos"], sueldo["deducciones"], sueldo["notas"]) for sueldo in sueldos_data]
+    )
 
     connection.commit()
     print("Datos insertados exitosamente en la base de datos.")
