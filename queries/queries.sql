@@ -1,102 +1,216 @@
--- Inserción de Clientes
+--
+-- Clientes
+--
 
-INSERT INTO CLIENTES (NOMBRE, APELLIDO, TELEFONO, ID_CUENTA)
-VALUES (:nombre, :apellido, :telefono, :id_cuenta);
+-- Registrar un cliente
+BEGIN
+    registrar_cliente_y_cuenta(
+        p_nombre => :nombre,
+        p_apellido => :apellido,
+        p_telefono => :telefono,
+        p_numero_de_cuenta => :numero_cuenta,
+        p_id_tipo_de_cuenta => :id_tipo_cuenta,
+        p_saldo => :saldo
+    );
+END;
+/
+
+SELECT * FROM estados_de_tarjetas;
+SELECT * FROM clientes;
+SELECT * FROM cuentas;
+
+-- Actualizar Información del cliente
+UPDATE clientes
+SET nombre = :nuevo_nombre, apellido = :nuevo_apellido, telefono = :nuevo_telefono
+WHERE id = :id_cliente;
+
+--  Consultar Saldo
+SELECT SALDO FROM cuentas WHERE id = :id_cuenta;
+
+-- Obtener Información del Cliente
+-- nombre, apellido, telefono, tipo de cuenta
+SELECT
+    c.nombre,
+    c.apellido,
+    c.telefono,
+    t.tipo AS nombre_tipo_cuenta
+FROM
+    clientes c
+JOIN
+    cuentas cu ON c.id = cu.id_cliente
+JOIN
+    tipo_de_cuentas t ON cu.id_tipo_de_cuenta = t.id
+WHERE
+    c.id = :cliente_id;  -- Aquí se usa el parámetro
 
 
-UPDATE CLIENTES
-SET NOMBRE = :nuevo_nombre, APELLIDO = :nuevo_apellido, TELEFONO = :nuevo_telefono
-WHERE ID = :id_cliente;
 
+--
+-- Transacciones
+--
 
-SELECT SALDO 
-FROM CUENTAS 
-WHERE ID = (SELECT ID_CUENTA FROM CLIENTES WHERE ID = :id_cliente);
+-- Registrar Depósito
 
+SELECT * FROM bovedas;
 
-SELECT 
-    c.NOMBRE, 
-    c.APELLIDO, 
-    c.TELEFONO, 
-    tc.TIPO AS "Tipo Cuenta"
-FROM 
-    CLIENTES c
-JOIN 
-    CUENTAS cu ON c.ID_CUENTA = cu.ID
-JOIN 
-    TIPO_DE_CUENTAS tc ON cu.ID_TIPO_DE_CUENTA = tc.ID
-WHERE 
-    c.ID = :id_cliente;
+BEGIN
+    manejar_deposito(
+        p_numero_cuenta => :numero_cuenta,
+        p_monto => :monto,
+        p_id_sucursal_agencia => :id_sucursal_agencia
+    );
+END;
+/
 
+SELECT * FROM CUENTAS;
 
-INSERT INTO TRANSACCIONES (ID_CLIENTE, NUMERO_DE_CUENTA_ORIGEN, ID_TIPO_TRANSACCION, MONTO, FECHA, HORA, DESCRIPCION, SUCURSAL, AGENCIA, ID_SUCURSAL_AGENCIA)
-VALUES (:id_cliente, :numero_cuenta, :id_tipo_transaccion, :monto, SYSDATE, SYSTIMESTAMP, :descripcion, :sucursal, :agencia, :id_sucursal_agencia);
+-- Registrar Retiro
+BEGIN
+    registrar_retiro(
+        p_numero_cuenta => :numero_cuenta,
+        p_monto => :monto,
+        p_id_sucursal_agencia => :id_sucursal_agencia
+    );
+END;
 
-INSERT INTO TRANSACCIONES (ID_CLIENTE, NUMERO_DE_CUENTA_ORIGEN, ID_TIPO_TRANSACCION, MONTO, FECHA, HORA, DESCRIPCION, SUCURSAL, AGENCIA, ID_SUCURSAL_AGENCIA)
-VALUES (:id_cliente, :numero_cuenta, :id_tipo_transaccion, :monto, SYSDATE, SYSTIMESTAMP, :descripcion, :sucursal, :agencia, :id_sucursal_agencia);
+-- Registrar Transferencias entre cuentas
+BEGIN
+    manejar_transferencia(
+        p_numero_cuenta_origen => :numero_cuenta_origen,
+        p_numero_cuenta_destino => :numero_cuenta_destino,
+        p_monto => :monto,
+        p_id_sucursal_agencia => :id_sucursal_agencia
+    );
+END;
 
-INSERT INTO TRANSACCIONES (ID_CLIENTE, NUMERO_DE_CUENTA_ORIGEN, NUMERO_DE_CUENTA_DESTINO, ID_TIPO_TRANSACCION, MONTO, FECHA, HORA, DESCRIPCION, SUCURSAL, AGENCIA, ID_SUCURSAL_AGENCIA)
-VALUES (:id_cliente, :cuenta_origen, :cuenta_destino, :id_tipo_transaccion, :monto, SYSDATE, SYSTIMESTAMP, :descripcion, :sucursal, :agencia, :id_sucursal_agencia);
+-- Registrar Transferencias Interbancarias
+BEGIN
+    manejar_transferencia_inter(
+        p_id_sucursal_origen => :id_sucursal_origen,
+        p_id_sucursal_destino => :id_sucursal_destino,
+        p_numero_cuenta_origen => :numero_cuenta_origen,
+        p_numero_cuenta_destino => :numero_cuenta_destino,
+        p_monto => :monto
+    );
+END;
 
-SELECT * 
-FROM TRANSACCIONES 
-WHERE ID_CLIENTE = :id_cliente 
-ORDER BY FECHA DESC;
+SELECT * FROM SUCURSALES_AGENCIAS;
+SELECT * FROM BOVEDAS;
 
-INSERT INTO PRESTAMOS (ID_CLIENTE, MONTO_DEL_PRESTAMO, TASA_DE_INTERES, FECHA_DE_DESEMBOLSO, FECHA_DE_VENCIMIENTO, SALDO_PENDIENTE, ID_ESTADO)
-VALUES (:id_cliente, :monto_del_prestamo, :tasa_de_interes, SYSDATE, :fecha_de_vencimiento, :saldo_pendiente, :id_estado);
+-- Consultar Historial
+SELECT
+    t.id,
+    t.id_cliente,
+    t.numero_de_cuenta_origen,
+    t.numero_de_cuenta_destino,
+    tt.tipo AS tipo_transaccion,
+    t.monto,
+    t.fecha,
+    t.descripcion
+FROM
+    transacciones t
+JOIN
+    tipos_de_transacciones tt ON t.id_tipo_transaccion = tt.id
+JOIN
+    cuentas cu ON cu.NUMERO_DE_CUENTA = :numero_cuenta
+WHERE
+    t.id_cliente = :id_cliente;
 
-UPDATE PRESTAMOS
-SET ID_ESTADO = :nuevo_estado
-WHERE ID_PRESTAMO = :id_prestamo;
+SELECT * FROM TRANSACCIONES;
+select * from CUENTAS;
 
-INSERT INTO TRANSACCIONES (ID_CLIENTE, NUMERO_DE_CUENTA_ORIGEN, ID_TIPO_TRANSACCION, MONTO, FECHA, HORA, DESCRIPCION, SUCURSAL, AGENCIA, ID_SUCURSAL_AGENCIA)
-VALUES (:id_cliente, :numero_cuenta, :id_tipo_transaccion, :monto_pago, SYSDATE, SYSTIMESTAMP, :descripcion_pago, :sucursal, :agencia, :id_sucursal_agencia);
+--
+-- Prestamos
+--
 
-SELECT * FROM PRESTAMOS;
+SELECT * FROM prestamos;
 
-SELECT * 
-FROM PRESTAMOS 
-WHERE ID_CLIENTE = :id_cliente AND ID_ESTADO = (SELECT ID FROM ESTADOS_DE_PRESTAMOS WHERE ESTADO = 'Aprobado');
+-- Solicitar Prestamo
+INSERT INTO prestamos (id_prestamo,id_cliente, monto_del_prestamo, tasa_de_interes, fecha_de_desembolso, fecha_de_vencimiento, saldo_pendiente, id_estado)
+VALUES (seq_prestamos.NEXTVAL,:id_cliente, :monto_del_prestamo, :tasa_de_interes, SYSDATE, :fecha_de_vencimiento, :saldo_pendiente, 5);
 
-INSERT INTO TARJETAS_DE_CREDITO (ID_CLIENTE, NUMERO_DE_TARJETA, LIMITE_DE_CREDITO, SALDO_ACTUAL, FECHA_DE_EMISION, FECHA_DE_EXPIRACION, ID_ESTADO, FECHA_DE_CORTE, DIA_DEL_CICLO)
+UPDATE prestamos
+SET id_estado = :nuevo_estado
+WHERE id_prestamo = :id_prestamo;
+
+BEGIN
+    registrar_pago_prestamo(
+        p_id_prestamo => :id_prestamo,
+        p_monto_pago => :monto_pago,
+        p_id_sucursal_agencia => :id_sucursal_agencia
+    );
+END;
+/
+
+SELECT * FROM ESTADOS_DE_PRESTAMOS;
+
+-- Consultar Prestamos Activos de un Cliente
+SELECT *
+FROM prestamos
+WHERE id_cliente = :id_cliente AND id_estado = (SELECT id FROM estados_de_prestamos WHERE estado = 'Aprobado');
+
+--
+-- Tarjetas
+--
+
+-- Emitir Tarjeta
+INSERT INTO tarjetas_de_credito (id_cliente, numero_de_tarjeta, limite_de_credito, saldo_actual, fecha_de_emision, fecha_de_expiracion, id_estado, fecha_de_corte, dia_del_ciclo)
 VALUES (:id_cliente, :numero_tarjeta, :limite_de_credito, :saldo_actual, SYSDATE, :fecha_de_expiracion, :id_estado, :fecha_de_corte, :dia_del_ciclo);
 
-INSERT INTO TRANSACCIONES (ID_CLIENTE, NUMERO_DE_CUENTA_ORIGEN, ID_TIPO_TRANSACCION, MONTO, FECHA, HORA, DESCRIPCION, SUCURSAL, AGENCIA, ID_SUCURSAL_AGENCIA)
-VALUES (:id_cliente, :numero_cuenta, :id_tipo_transaccion, :monto_pago, SYSDATE, SYSTIMESTAMP, :descripcion_pago, :sucursal, :agencia, :id_sucursal_agencia);
+-- Registrar Pago y compras
+BEGIN
+    pagar_tarjeta_credito(
+        p_id_cliente => :id_cliente,
+        p_numero_tarjeta => :numero_tarjeta,
+        p_monto_pago => :monto_pago,
+        p_tipo_transaccion => :tipo_transaccion,
+        p_id_sucursal_agencia => :id_sucursal_agencia
+    );
+END;
 
-INSERT INTO TRANSACCIONES (ID_CLIENTE, NUMERO_DE_CUENTA_ORIGEN, ID_TIPO_TRANSACCION, MONTO, FECHA, HORA, DESCRIPCION, SUCURSAL, AGENCIA, ID_SUCURSAL_AGENCIA)
-VALUES (:id_cliente, :numero_tarjeta, :id_tipo_transaccion, :monto_compra, SYSDATE, SYSTIMESTAMP, :descripcion_compra, :sucursal, :agencia, :id_sucursal_agencia);
+-- Consutlar Estado de Cuenta
 
-SELECT SALDO_ACTUAL, LIMITE_DE_CREDITO, FECHA_DE_CORTE 
-FROM TARJETAS_DE_CREDITO 
-WHERE ID_CLIENTE = :id_cliente;
+SELECT * FROM TARJETAS_DE_CREDITO;
 
-INSERT INTO EMPLEADOS (NOMBRE, APELLIDO, ID_ROL, ID_DEPARTAMENTO, SUCURSAL, AGENCIA, TELEFONO)
-VALUES (:nombre, :apellido, :id_rol, :id_departamento, :sucursal, :agencia, :telefono);
+SELECT numero_de_tarjeta,saldo_actual, limite_de_credito, fecha_de_corte
+FROM tarjetas_de_credito
+WHERE id_cliente = :id_cliente;
 
-UPDATE EMPLEADOS
-SET NOMBRE = :nuevo_nombre, APELLIDO = :nuevo_apellido, TELEFONO = :nuevo_telefono
-WHERE ID = :id_empleado;
+--
+-- Empleados
+--
 
-SELECT * 
-FROM EMPLEADOS ;
+SELECT * FROM empleados;
 
-SELECT * 
-FROM EMPLEADOS 
-WHERE SUCURSAL = :sucursal;
+-- registrar empleado
+INSERT INTO empleados (id,nombre, apellido, id_rol, id_departamento,ID_SUCURSAL,telefono)
+VALUES (seq_empleados.nextval,:nombre, :apellido, :id_rol, :id_departamento, :sucursal,  :telefono);
 
-INSERT INTO SUCURSALES_AGENCIAS (NOMBRE, ID_TIPO, TELEFONO, ID_UBICACION, NUM_EMPLEADO, CAPACIDAD_ALAMCENAMIENTO)
-VALUES (:nombre, :id_tipo, :telefono, :id_ubicacion, :num_empleado, :capacidad_almacenamiento);
+-- Actualizar Información del empleado
+UPDATE empleados
+SET nombre = :nuevo_nombre, apellido = :nuevo_apellido, telefono = :nuevo_telefono
+WHERE id = :id_empleado;
 
-SELECT * 
-FROM SUCURSALES_AGENCIAS 
-WHERE ID_UBICACION IN (SELECT ID FROM UBICACIONES WHERE ID_DEPARTAMENTO = :id_departamento);
+-- Consultar Empleados por Sucursal
+SELECT * FROM empleados WHERE id_sucursal = (SELECT id FROM sucursales_agencias WHERE nombre = :nombre_sucursal);
 
-SELECT * 
-FROM TRANSACCIONES 
-WHERE FECHA BETWEEN :fecha_inicio AND :fecha_fin;
+--
+-- sucursales_agencias
+--
+SELECT *
+FROM sucursales_agencias;
+-- Registrar Sucursal
+INSERT INTO SUCURSALES_AGENCIAS (id,nombre, id_tipo, telefono, id_ubicacion)
+VALUES (seq_sucursales_agencias.nextval,:nombre, :id_tipo, :telefono, :id_ubicacion);
 
-SELECT * 
-FROM PRESTAMOS 
-WHERE ID_ESTADO = (SELECT ID FROM ESTADOS_DE_PRESTAMOS WHERE ESTADO = 'Aprobado');
+-- Consultar Sucursales por Departamento
+SELECT id,nombre,telefono FROM sucursales_agencias WHERE id_ubicacion IN (SELECT id FROM ubicaciones WHERE id_departamento = :id_departamento);
+
+
+SELECT *
+FROM transacciones
+WHERE fecha BETWEEN :fecha_inicio AND :fecha_fin;
+
+SELECT *
+FROM prestamos
+WHERE id_estado = (SELECT id FROM estados_de_prestamos WHERE estado = 'Aprobado');
