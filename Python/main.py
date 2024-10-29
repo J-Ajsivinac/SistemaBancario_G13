@@ -247,20 +247,19 @@ num_tarjetas = 500000
 def random_date(start, end):
     return start + timedelta(days=random.randint(0, (end - start).days))
 
-# Generar datos para las tarjetas de crédito
 tarjetas_data = []
 
 for i in range(1, num_tarjetas + 1):
     fecha_emision = random_date(datetime(2020, 1, 1), datetime(2024, 12, 31))
-    fecha_expiracion = fecha_emision + timedelta(days=730)  # 2 años de validez
-    fecha_de_corte = random_date(fecha_emision, fecha_emision + timedelta(days=30))  # Dentro del mes
+    fecha_expiracion = fecha_emision + timedelta(days=730) 
+    fecha_de_corte = random_date(fecha_emision, fecha_emision + timedelta(days=30)) 
     limite_de_credito = round(random.uniform(1000.00, 50000.00), 2)
     saldo_actual = round(random.uniform(0.00, limite_de_credito), 2)
     
     tarjetas_data.append({
         "id_tarjeta": i,
-        "id_cliente": i,  # Mapeo directo de 1 a 500000
-        "numero_de_tarjeta": f"{random.randint(4000000000000000, 4999999999999999)}",  # Generar un número de tarjeta
+        "id_cliente": i, 
+        "numero_de_tarjeta": f"{random.randint(4000000000000000, 4999999999999999)}", 
         "limite_de_credito": limite_de_credito,
         "saldo_actual": saldo_actual,
         "fecha_de_emision": fecha_emision.strftime('%Y-%m-%d'),
@@ -281,8 +280,8 @@ for i in range(1, num_prestamos + 1):
     monto_del_prestamo = round(random.uniform(5000.00, 1000000.00), 2)
     tasa_de_interes = round(random.uniform(3.00, 15.00), 2)
     fecha_desembolso = random_date(datetime(2020, 1, 1), datetime(2024, 12, 31))
-    fecha_vencimiento = fecha_desembolso + timedelta(days=730)  # 2 años de vencimiento
-    saldo_pendiente = monto_del_prestamo  # Saldo inicial es el mismo monto del préstamo
+    fecha_vencimiento = fecha_desembolso + timedelta(days=730) 
+    saldo_pendiente = monto_del_prestamo 
     
     prestamos_data.append({
         "id_prestamo": i,
@@ -299,19 +298,18 @@ num_transacciones = 250000
 transacciones_data = []
 
 for i in range(1, num_transacciones + 1):
-    id_cliente = random.randint(1, 500000)  # Cliente aleatorio
-    cuenta_origen = random.randint(1, 500000)  # Cuenta origen aleatoria
-    cuenta_destino = cuenta_origen  # Inicializar cuenta destino igual a cuenta origen
-    
-    # Asegurar que la cuenta destino sea diferente de la cuenta origen
+    id_cliente = random.randint(1, 500000)
+    cuenta_origen = random.randint(1, 500000)
+    cuenta_destino = cuenta_origen
+
     while cuenta_destino == cuenta_origen:
         cuenta_destino = random.randint(1, 500000)
 
-    id_tipo_transaccion = random.randint(1, 5)  # Suponiendo 5 tipos de transacción
-    monto = round(random.uniform(10.00, 5000.00), 2)  # Monto entre 10 y 5000
-    fecha = datetime.now() - timedelta(days=random.randint(0, 365))  # Fecha aleatoria en el último año
-    descripcion = f"Transacción #{i}"  # Descripción genérica
-    id_sucursal_agencia = random.randint(1, 2050)  # Sucursal o agencia aleatoria
+    id_tipo_transaccion = random.randint(1, 5)
+    monto = round(random.uniform(10.00, 5000.00), 2)
+    fecha = datetime.now() - timedelta(days=random.randint(0, 365))
+    descripcion = f"Transacción #{i}" 
+    id_sucursal_agencia = random.randint(1, 2050) 
 
     transacciones_data.append({
         "id": i,
